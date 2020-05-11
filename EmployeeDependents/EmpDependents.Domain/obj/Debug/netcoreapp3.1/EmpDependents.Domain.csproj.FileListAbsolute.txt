@@ -1,0 +1,9 @@
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\bin\Debug\netcoreapp3.1\EmpDependents.Domain.deps.json
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\bin\Debug\netcoreapp3.1\EmpDependents.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\bin\Debug\netcoreapp3.1\EmpDependents.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.csprojAssemblyReference.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.AssemblyInfoInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Domain\obj\Debug\netcoreapp3.1\EmpDependents.Domain.pdb

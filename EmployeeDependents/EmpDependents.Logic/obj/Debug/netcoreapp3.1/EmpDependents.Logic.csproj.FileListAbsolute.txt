@@ -1,0 +1,9 @@
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\bin\Debug\netcoreapp3.1\EmpDependents.Logic.deps.json
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\bin\Debug\netcoreapp3.1\EmpDependents.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\bin\Debug\netcoreapp3.1\EmpDependents.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.csprojAssemblyReference.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.AssemblyInfoInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.pdb

@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\jvela\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\jvela\\.nuget\\packages"
+    ]
+  }
+}

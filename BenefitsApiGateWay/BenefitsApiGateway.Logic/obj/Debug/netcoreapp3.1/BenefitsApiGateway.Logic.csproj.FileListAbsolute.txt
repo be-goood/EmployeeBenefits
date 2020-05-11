@@ -1,0 +1,9 @@
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.deps.json
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.csprojAssemblyReference.cache
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.AssemblyInfoInputs.cache
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.pdb

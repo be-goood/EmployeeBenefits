@@ -1,0 +1,9 @@
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\bin\Debug\netcoreapp3.1\EmpDependents.Sql.deps.json
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\bin\Debug\netcoreapp3.1\EmpDependents.Sql.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\bin\Debug\netcoreapp3.1\EmpDependents.Sql.pdb
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.csprojAssemblyReference.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.AssemblyInfoInputs.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Sql\obj\Debug\netcoreapp3.1\EmpDependents.Sql.pdb

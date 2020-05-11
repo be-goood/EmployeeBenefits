@@ -1,0 +1,9 @@
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\bin\Debug\netcoreapp3.1\MedicalBenefits.Domain.deps.json
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\bin\Debug\netcoreapp3.1\MedicalBenefits.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\bin\Debug\netcoreapp3.1\MedicalBenefits.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.csprojAssemblyReference.cache
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.AssemblyInfoInputs.cache
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\MedicalBenefits\MedicalBenefits.Domain\obj\Debug\netcoreapp3.1\MedicalBenefits.Domain.pdb
