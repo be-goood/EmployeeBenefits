@@ -6,3 +6,4 @@ C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.AssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csprojAssemblyReference.cache
