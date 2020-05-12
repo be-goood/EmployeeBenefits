@@ -147,4 +147,11 @@ C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\obj\Debug\netcoreapp3.1\Employee.Api.csproj.CoreCompileInputs.cache
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\obj\Debug\netcoreapp3.1\Employee.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\obj\Debug\netcoreapp3.1\Employee.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Employee.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Api\bin\Debug\netcoreapp3.1\Employee.Logic.pdb

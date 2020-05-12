@@ -12,10 +12,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Employee.Domain\Employee.Domain.csproj" />
+    <ProjectReference Include="..\Employee.Logic\Employee.Logic.csproj" />
     <ProjectReference Include="..\Employee.Sql\Employee.Sql.csproj" />
   </ItemGroup>
 

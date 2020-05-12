@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Employee.Domain.Models.Configuration;
 using Employee.Domain.Models.Entities;
 using Employee.Domain.Models.Interfaces;
+using Employee.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -30,7 +31,7 @@ namespace Employee.Api.Controllers
 
             try
             {
-                model = await _getEmployeeAndCurrentSalaryQuery.ExecuteQuery(employeeId);
+                model = await new EmployeeTransactions().GetEmployeeWithCurrentSalaryAsync(_getEmployeeAndCurrentSalaryQuery, employeeId).ConfigureAwait(false);
             }
             catch (Exception ex)
             {

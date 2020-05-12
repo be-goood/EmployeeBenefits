@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "Employee.Logic/1.0.0": {
+        "dependencies": {
+          "Employee.Domain": "1.0.0"
+        },
         "runtime": {
           "Employee.Logic.dll": {}
+        }
+      },
+      "Employee.Domain/1.0.0": {
+        "runtime": {
+          "Employee.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "Employee.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Employee.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

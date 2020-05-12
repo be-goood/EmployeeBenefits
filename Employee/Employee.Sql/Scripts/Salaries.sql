@@ -7,7 +7,7 @@
 	[EndDate]		DATETIME NULL, 
 	[CreatedOn]		DATETIME NOT NULL, 
 	[CreatedBy]		NVARCHAR (50) NOT NULL,
-	[UpdateOn]		DATETIME NOT NULL, 
+	[UpdatedOn]		DATETIME NOT NULL, 
 	[UpdatedBy]		NVARCHAR (50) NOT NULL,
 
 	CONSTRAINT [PK_Salaries] PRIMARY KEY ([Id]),

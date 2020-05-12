@@ -30,6 +30,9 @@
               "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Domain\\Employee.Domain.csproj": {
                 "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Domain\\Employee.Domain.csproj"
               },
+              "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\Employee.Logic.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\Employee.Logic.csproj"
+              },
               "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Sql\\Employee.Sql.csproj": {
                 "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Sql\\Employee.Sql.csproj"
               }
@@ -58,6 +61,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.4.1, )"
             }
           },
           "imports": [
@@ -105,6 +112,62 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\Employee.Logic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\Employee.Logic.csproj",
+        "projectName": "Employee.Logic",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\Employee.Logic.csproj",
+        "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Logic\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Domain\\Employee.Domain.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\Employee\\Employee.Domain\\Employee.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
