@@ -2,7 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>db1b5720-e06f-4b36-b978-32eb8b97df3a</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EmpDependents.Domain\EmpDependents.Domain.csproj" />
+    <ProjectReference Include="..\EmpDependents.Sql\EmpDependents.Sql.csproj" />
+  </ItemGroup>
 
 
 </Project>

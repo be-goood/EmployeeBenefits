@@ -4,14 +4,14 @@
     "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj": {}
   },
   "projects": {
-    "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj": {
+    "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj",
-        "projectName": "EmpDependents",
-        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj",
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj",
+        "projectName": "EmpDependents.Domain",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj",
         "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
-        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\obj\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,147 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\EmpDependents.Sql.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\EmpDependents.Sql.csproj",
+        "projectName": "EmpDependents.Sql",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\EmpDependents.Sql.csproj",
+        "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj",
+        "projectName": "EmpDependents",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\EmpDependents.csproj",
+        "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Domain\\EmpDependents.Domain.csproj"
+              },
+              "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\EmpDependents.Sql.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\EmployeeDependents\\EmpDependents.Sql\\EmpDependents.Sql.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.4.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
