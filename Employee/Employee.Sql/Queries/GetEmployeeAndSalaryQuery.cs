@@ -20,20 +20,12 @@ namespace Employee.Sql.Queries
         {
             using (var dbContext = new EmployeeDb(_connectionString))
             {
-                try
-                {
-                    var model = await dbContext.Employee
-                        .Where(w => w.Id == employeeId)
-                        .Include(i => i.Salary)
-                        .FirstOrDefaultAsync();
+                var model = await dbContext.Employee
+                    .Where(w => w.Id == employeeId)
+                    .Include(i => i.Salary)
+                    .FirstOrDefaultAsync();
 
-                    return model;
-                }
-                catch (Exception ex)
-                {
-                    var msg = ex.InnerException;
-                }
-                return null;
+                return model;
             }
         }
     }

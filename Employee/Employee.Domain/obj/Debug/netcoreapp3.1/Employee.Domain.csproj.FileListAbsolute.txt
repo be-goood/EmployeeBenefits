@@ -1,7 +1,6 @@
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\bin\Debug\netcoreapp3.1\Employee.Domain.deps.json
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\bin\Debug\netcoreapp3.1\Employee.Domain.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\bin\Debug\netcoreapp3.1\Employee.Domain.pdb
-C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\obj\Debug\netcoreapp3.1\Employee.Domain.csprojAssemblyReference.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\obj\Debug\netcoreapp3.1\Employee.Domain.csproj.CoreCompileInputs.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\obj\Debug\netcoreapp3.1\Employee.Domain.AssemblyInfoInputs.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Domain\obj\Debug\netcoreapp3.1\Employee.Domain.AssemblyInfo.cs

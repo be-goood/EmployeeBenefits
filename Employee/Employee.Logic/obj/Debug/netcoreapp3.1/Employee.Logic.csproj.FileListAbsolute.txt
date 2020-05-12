@@ -1,12 +1,12 @@
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Logic.deps.json
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Logic.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csprojAssemblyReference.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csproj.CoreCompileInputs.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.AssemblyInfoInputs.cache
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.AssemblyInfo.cs
+C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csproj.CopyComplete
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.dll
 C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.pdb
-C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csprojAssemblyReference.cache
-C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Domain.dll
-C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\bin\Debug\netcoreapp3.1\Employee.Domain.pdb
-C:\PrototypeCode\EmployeeBenefits\Employee\Employee.Logic\obj\Debug\netcoreapp3.1\Employee.Logic.csproj.CopyComplete
