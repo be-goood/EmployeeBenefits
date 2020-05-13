@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {
       "MedicalBenefits.Logic/1.0.0": {
+        "dependencies": {
+          "MedicalBenefits.Domain": "1.0.0"
+        },
         "runtime": {
           "MedicalBenefits.Logic.dll": {}
+        }
+      },
+      "MedicalBenefits.Domain/1.0.0": {
+        "runtime": {
+          "MedicalBenefits.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "MedicalBenefits.Logic/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MedicalBenefits.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

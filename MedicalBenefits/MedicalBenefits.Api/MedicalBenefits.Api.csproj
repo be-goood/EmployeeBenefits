@@ -4,5 +4,16 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MedicalBenefits.Domain\MedicalBenefits.Domain.csproj" />
+    <ProjectReference Include="..\MedicalBenefits.Logic\MedicalBenefits.Logic.csproj" />
+    <ProjectReference Include="..\MedicalBenefits.Sql\MedicalBenefits.Sql.csproj" />
+  </ItemGroup>
+
 
 </Project>
