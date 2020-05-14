@@ -35,22 +35,27 @@ namespace MedicalBenefits.Logic
         {
             await Task.Run(() =>
             {
-                foreach (var employee in p.Employees)
-                {
-                    employee.BenefitsCost = p.CostRule.BaseEmployeeCost;
-                    employee.BenefitDiscount = GetDiscountAmount(employee.Name, p.CostRule.BaseEmployeeCost, p.CostRule.DiscountPercentage);
-                    employee.TotalBenefitsCost = employee.BenefitsCost - employee.BenefitDiscount;
-                    employee.TotalBenefitsDiscount = employee.BenefitDiscount;
-
-                    foreach (var dependent in employee.Dependents)
-                    {
-                        dependent.BenefitsCost = p.CostRule.BaseDependentCost;
-                        dependent.BenefitDiscount = GetDiscountAmount(dependent.Name, p.CostRule.BaseDependentCost, p.CostRule.DiscountPercentage);
-                        employee.TotalBenefitsCost += employee.BenefitsCost - dependent.BenefitDiscount;
-                        employee.TotalBenefitsDiscount += employee.BenefitDiscount;
-                    }
-                }
+                ApplyCostsToEachEmployee(p);
             });
+        }
+
+        public void ApplyCostsToEachEmployee(Parameters p)
+        {
+            foreach (var employee in p.Employees)
+            {
+                employee.BenefitsCost = p.CostRule.BaseEmployeeCost;
+                employee.BenefitDiscount = GetDiscountAmount(employee.Name, p.CostRule.BaseEmployeeCost, p.CostRule.DiscountPercentage);
+                employee.TotalBenefitsCost = employee.BenefitsCost - employee.BenefitDiscount;
+                employee.TotalBenefitsDiscount = employee.BenefitDiscount;
+
+                foreach (var dependent in employee.Dependents)
+                {
+                    dependent.BenefitsCost = p.CostRule.BaseDependentCost;
+                    dependent.BenefitDiscount = GetDiscountAmount(dependent.Name, p.CostRule.BaseDependentCost, p.CostRule.DiscountPercentage);
+                    employee.TotalBenefitsCost += dependent.BenefitsCost - dependent.BenefitDiscount;
+                    employee.TotalBenefitsDiscount += dependent.BenefitDiscount;
+                }
+            }
         }
 
         public decimal GetDiscountAmount(string name, decimal baseCost, decimal discountPercentage)
