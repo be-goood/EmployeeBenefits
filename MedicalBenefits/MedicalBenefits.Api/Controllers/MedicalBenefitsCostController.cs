@@ -21,18 +21,17 @@ namespace MedicalBenefits.Api.Controllers
         {
             _settings = settings.CurrentValue;
             _getEmployeeCostRulesQuery = getEmployeeCostRulesQuery;
-
         }
 
-        [HttpGet]
+        [HttpPost]
         [ProducesResponseType(typeof(List<Employee>), 200)]
         [ProducesResponseType(typeof(void), 500)]
-        public async Task<IActionResult> GetEmployeeAsync(List<Employee> employees)
+        public async Task<IActionResult> GetEmployeeAsync(List<InputEmployee> employees)
         {
             var p = new Parameters();
             try
             {
-                p = new Parameters() { Employees = employees, GetEmployeeCostRulesQuery = _getEmployeeCostRulesQuery };
+                p = new Parameters() { InputEmployees = employees, GetEmployeeCostRulesQuery = _getEmployeeCostRulesQuery };
                 await new CostRules().CalculateCostAsync(p);
             }
             catch (Exception ex)

@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedicalBenefits.Domain.Entities
 {
-    [Table("Dependents")]
+    [Table("CostRules")]
     public class CostRule
     {
         [Key]

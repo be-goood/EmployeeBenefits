@@ -14,6 +14,20 @@ namespace MedicalBenefits.Logic
 
         public async Task SetUpData(Parameters p)
         {
+            foreach(var ie in p.InputEmployees)
+            {
+                var employee = new Employee();
+                employee.Id = ie.Id;
+                employee.Name = ie.Name;
+                foreach(var id in ie.InputDependents)
+                {
+                    var dependant = new Dependent();
+                    dependant.Id = id.Id;
+                    dependant.Name = id.Name;
+                    employee.Dependents.Add(dependant);
+                }
+                p.Employees.Add(employee);
+            }
             p.CostRule = await p.GetEmployeeCostRulesQuery.ExecuteQueryAsync();
         }
 
@@ -25,10 +39,15 @@ namespace MedicalBenefits.Logic
                 {
                     employee.BenefitsCost = p.CostRule.BaseEmployeeCost;
                     employee.BenefitDiscount = GetDiscountAmount(employee.Name, p.CostRule.BaseEmployeeCost, p.CostRule.DiscountPercentage);
+                    employee.TotalBenefitsCost = employee.BenefitsCost - employee.BenefitDiscount;
+                    employee.TotalBenefitsDiscount = employee.BenefitDiscount;
+
                     foreach (var dependent in employee.Dependents)
                     {
                         dependent.BenefitsCost = p.CostRule.BaseDependentCost;
-                        dependent.BenefitsCost = GetDiscountAmount(dependent.Name, p.CostRule.BaseDependentCost, p.CostRule.DiscountPercentage);
+                        dependent.BenefitDiscount = GetDiscountAmount(dependent.Name, p.CostRule.BaseDependentCost, p.CostRule.DiscountPercentage);
+                        employee.TotalBenefitsCost += employee.BenefitsCost - dependent.BenefitDiscount;
+                        employee.TotalBenefitsDiscount += employee.BenefitDiscount;
                     }
                 }
             });
