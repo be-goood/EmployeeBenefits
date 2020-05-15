@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Employee.Domain.Configuration;
 using Employee.Domain.Entities;
@@ -15,14 +16,17 @@ namespace Employee.Api.Controllers
     {
         private ApiSettings _settings;
         private IQuery<EmployeeEntity, Guid> _getEmployeeAndCurrentSalaryQuery;
+        private IQueryNoParam<List<EmployeeEntity>> _getAllEmployeesAndSalariesQuery;
 
-        public EmployeeController(IOptionsMonitor<ApiSettings> settings, IQuery<EmployeeEntity, Guid> getEmployeeAndCurrentSalaryQuery)
+        public EmployeeController(IOptionsMonitor<ApiSettings> settings, IQuery<EmployeeEntity, Guid> getEmployeeAndCurrentSalaryQuery, IQueryNoParam<List<EmployeeEntity>> getAllEmployeesAndSalariesQuery)
         {
             _settings = settings.CurrentValue;
             _getEmployeeAndCurrentSalaryQuery = getEmployeeAndCurrentSalaryQuery;
+            _getAllEmployeesAndSalariesQuery = getAllEmployeesAndSalariesQuery;
         }
 
         [HttpGet]
+        [Route("GetEmployee")]
         [ProducesResponseType(typeof(EmployeeEntity), 200)]
         [ProducesResponseType(typeof(void), 500)]
         public async Task<IActionResult> GetEmployee(Guid employeeId)
@@ -39,6 +43,26 @@ namespace Employee.Api.Controllers
             }
 
             return Ok(model);
+        }
+
+        [HttpGet]
+        [Route("GetAllEmployees")]
+        [ProducesResponseType(typeof(List<EmployeeEntity>), 200)]
+        [ProducesResponseType(typeof(void), 500)]
+        public async Task<IActionResult> GetAllEmployees(Guid employeeId)
+        {
+            List<EmployeeEntity> results;
+
+            try
+            {
+                results = await new EmployeeTransactions().GetAllEmployeesWithCurrentSalariesAsync(_getAllEmployeesAndSalariesQuery).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok(results);
         }
     }
 }
