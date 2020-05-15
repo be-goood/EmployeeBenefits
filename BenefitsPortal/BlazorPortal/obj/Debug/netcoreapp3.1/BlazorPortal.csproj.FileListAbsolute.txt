@@ -49,3 +49,5 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcorea
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\BlazorPortal.pdb
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\BlazorPortal.genruntimeconfig.cache
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\BlazorPortal.csproj.CopyComplete
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EBenefits.razor.g.cs
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\EBenefits.razor.g.cs

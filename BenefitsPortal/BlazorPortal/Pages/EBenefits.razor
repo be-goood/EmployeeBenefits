@@ -1,0 +1,58 @@
+﻿@page "/ebenefits"
+
+@using BlazorPortal.Data
+@inject EmployeeBenefitsService BenefitsService
+
+<h1>Employee Benefits</h1>
+
+<p>Overview of employee benefits.</p>
+
+@if (employeeBenefits == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Benefit Plan</th>
+                <th>Coverage Begin Date</th>
+                <th>Deduction Begin Date</th>
+                <th>Coverage</th>
+                <th>Calculated Coverage</th>
+                <th>Dependents</th>
+                <th>Beneficiaries</th>
+                <th>Employee Cost (Semi-monthly)</th>
+                <th>Employer Contributions (Semi-monthly)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var eb in employeeBenefits)
+            {
+            <tr>
+                <td>@eb.EmployeeName</td>
+                <td>@eb.BenefitPlan</td>
+                <td>@eb.CoverageBeginDate.ToShortDateString()</td>
+                <td>@eb.DeducationBeginDate.ToShortDateString()</td>
+                <td>@eb.Coverage</td>
+                <td>@eb.CalculatedCoverage</td>
+                <td>@eb.Dependents</td>
+                <td>@eb.Beneficiaries</td>
+                <td>@eb.SemiMonthlyEmployeeCost</td>
+                <td>@eb.SemiMonthlyEmployerContributions</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private EmployeeBenefits[] employeeBenefits;
+
+    protected override async Task OnInitializedAsync()
+    {
+        employeeBenefits = await BenefitsService.GetEmployeeBenefitstAsync();
+    }
+}
