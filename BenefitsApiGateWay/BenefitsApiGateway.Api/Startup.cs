@@ -31,7 +31,8 @@ namespace BenefitsApiGateway.Api
             services.Configure<ApiSettings>(appSettings);
             appSettings.Bind(_apiSettings);
             services.AddSingleton<ApiSettings>(_apiSettings);
-            services.AddTransient<IEmployeeRepository>(_ => new EmployeeRepository(_httpclient, _apiSettings.EmployeeApiUri));
+            services.AddTransient<IEmployeeRepository>(_ => new EmployeeRepository(new HttpClient(), _apiSettings.EmployeeApiUri));
+            services.AddTransient<IDependentRepository>(_ => new DependentRepository(new HttpClient(), _apiSettings.EmployeeDependentsApiUri));
 
             services.AddControllers();
 

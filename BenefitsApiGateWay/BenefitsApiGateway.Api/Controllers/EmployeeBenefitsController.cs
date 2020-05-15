@@ -16,24 +16,26 @@ namespace BenefitsApiGateway.Api.Controllers
     {
         private ApiSettings _settings;
         private IEmployeeRepository _employeeRepository;
+        private IDependentRepository _dependentRepository;
 
-        public EmployeeBenefitsController(IOptionsMonitor<ApiSettings> settings, IEmployeeRepository employeeRepository)
+        public EmployeeBenefitsController(IOptionsMonitor<ApiSettings> settings, IEmployeeRepository employeeRepository, IDependentRepository dependentRepository)
         {
             _settings = settings.CurrentValue;
             _employeeRepository = employeeRepository;
+            _dependentRepository = dependentRepository;
         }
 
         [HttpGet]
         [Route("GetAllEmployees")]
         [ProducesResponseType(typeof(List<EmpDependetsBenefitDetails>), 200)]
         [ProducesResponseType(typeof(void), 500)]
-        public async Task<IActionResult> GetAllEmployees()
+        public async Task<IActionResult> GetAllEmployeesBenefitDetails()
         {
             List<EmpDependetsBenefitDetails> results;
 
             try
             {
-                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository);
+                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository, _dependentRepository);
             }
             catch (Exception ex)
             {

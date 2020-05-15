@@ -8,33 +8,33 @@ using BenefitsApiGateway.Domain.Models;
 
 namespace BenefitsApiGateway.Services
 {
-    public class EmployeeRepository : IEmployeeRepository
+    public class DependentRepository : IDependentRepository
     {
         private HttpClient _client = null;
 
-        public EmployeeRepository(HttpClient client, string employeeServiceUri)
+        public DependentRepository(HttpClient client, string dependetServiceUri)
         {
-            client.BaseAddress = new Uri(employeeServiceUri);
+            client.BaseAddress = new Uri(dependetServiceUri);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             _client = client;
         }
 
-        public async Task<List<Employee>> GetAllEmployeesAsync()
+        public async Task<List<Dependent>> GetAllEmployeeDependentsAsync(Guid emploeeId)
         {
             try
             {
-                var response = await _client.GetAsync("api/Employee/GetAllEmployees");
+                var response = await _client.GetAsync($"api/Dependents?employeeId={emploeeId}");
                 if (response.IsSuccessStatusCode)
                 {
-                    var data = await response.Content.ReadAsAsync<List<Employee>>();
+                    var data = await response.Content.ReadAsAsync<List<Dependent>>();
                     return data;
                 }
                 else
                 {
                     // add log
                     // wrap response in a generic service response
-                    return new List<Employee>();
+                    return new List<Dependent>();
                 }
             }
             catch (Exception ex)
