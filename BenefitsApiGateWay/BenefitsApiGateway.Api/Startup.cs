@@ -33,6 +33,7 @@ namespace BenefitsApiGateway.Api
             services.AddSingleton<ApiSettings>(_apiSettings);
             services.AddTransient<IEmployeeRepository>(_ => new EmployeeRepository(new HttpClient(), _apiSettings.EmployeeApiUri));
             services.AddTransient<IDependentRepository>(_ => new DependentRepository(new HttpClient(), _apiSettings.EmployeeDependentsApiUri));
+            services.AddTransient<IBenefitsRepository>(_ => new BenefitsRepository(new HttpClient(), _apiSettings.MedicalBenefitsApiUri));
 
             services.AddControllers();
 

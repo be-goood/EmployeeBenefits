@@ -17,12 +17,13 @@ namespace BenefitsApiGateway.Api.Controllers
         private ApiSettings _settings;
         private IEmployeeRepository _employeeRepository;
         private IDependentRepository _dependentRepository;
-
-        public EmployeeBenefitsController(IOptionsMonitor<ApiSettings> settings, IEmployeeRepository employeeRepository, IDependentRepository dependentRepository)
+        private IBenefitsRepository _benefitsRepository;
+        public EmployeeBenefitsController(IOptionsMonitor<ApiSettings> settings, IEmployeeRepository employeeRepository, IDependentRepository dependentRepository, IBenefitsRepository benefitsRepository)
         {
             _settings = settings.CurrentValue;
             _employeeRepository = employeeRepository;
             _dependentRepository = dependentRepository;
+            _benefitsRepository = benefitsRepository;
         }
 
         [HttpGet]
@@ -35,7 +36,7 @@ namespace BenefitsApiGateway.Api.Controllers
 
             try
             {
-                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository, _dependentRepository);
+                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository, _dependentRepository, _benefitsRepository);
             }
             catch (Exception ex)
             {
