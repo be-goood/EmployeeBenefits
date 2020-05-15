@@ -96,6 +96,13 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\System.Net.Http.Extensions.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\System.Net.Http.Primitives.dll
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Api.csproj.CoreCompileInputs.cache
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Api.MvcApplicationPartsAssemblyInfo.cache
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Services.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Api\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Services.pdb

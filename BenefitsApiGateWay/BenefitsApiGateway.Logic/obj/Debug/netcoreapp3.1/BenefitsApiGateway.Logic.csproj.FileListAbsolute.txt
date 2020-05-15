@@ -7,3 +7,6 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\ob
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.AssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.dll
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\bin\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Logic\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Logic.csproj.CopyComplete

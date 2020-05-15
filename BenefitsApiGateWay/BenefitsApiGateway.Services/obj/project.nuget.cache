@@ -1,8 +1,21 @@
 {
   "version": 2,
-  "dgSpecHash": "Vy4PwOtXYfIWxj6G9Evrmfpb670j4Kt8P0alG7FEDNIWFcLlJ+VRXqxwc9oRPX+q7gL7/AdlmgrIoWT3nWGr/g==",
+  "dgSpecHash": "s82D9zrkZgAl0sVOkdc5n4q6lOCia9DZiARdENwAb5Svs0XbP2UJnq6o2HIRQuMBiCAYmlHad3RvnylwbEG3eQ==",
   "success": true,
   "projectFilePath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsApiGateWay\\BenefitsApiGateway.Services\\BenefitsApiGateway.Services.csproj",
-  "expectedPackageFiles": [],
-  "logs": []
+  "expectedPackageFiles": [
+    "C:\\Users\\jvela\\.nuget\\packages\\system.net.http.formatting.extension\\5.2.3\\system.net.http.formatting.extension.5.2.3.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Net.Http.Formatting.Extension 5.2.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "System.Net.Http.Formatting.Extension",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

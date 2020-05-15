@@ -49,13 +49,13 @@ namespace Employee.Api.Controllers
         [Route("GetAllEmployees")]
         [ProducesResponseType(typeof(List<EmployeeEntity>), 200)]
         [ProducesResponseType(typeof(void), 500)]
-        public async Task<IActionResult> GetAllEmployees(Guid employeeId)
+        public async Task<IActionResult> GetAllEmployees()
         {
             List<EmployeeEntity> results;
 
             try
             {
-                results = await new EmployeeTransactions().GetAllEmployeesWithCurrentSalariesAsync(_getAllEmployeesAndSalariesQuery).ConfigureAwait(false);
+                results = await new EmployeeTransactions().GetAllEmployeesWithCurrentSalariesAsync(_getAllEmployeesAndSalariesQuery);
             }
             catch (Exception ex)
             {

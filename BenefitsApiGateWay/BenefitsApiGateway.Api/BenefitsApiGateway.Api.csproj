@@ -8,10 +8,13 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
+    <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BenefitsApiGateway.Domain\BenefitsApiGateway.Domain.csproj" />
+    <ProjectReference Include="..\BenefitsApiGateway.Logic\BenefitsApiGateway.Logic.csproj" />
+    <ProjectReference Include="..\BenefitsApiGateway.Services\BenefitsApiGateway.Services.csproj" />
   </ItemGroup>
 
 

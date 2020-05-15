@@ -1,10 +1,13 @@
 using BenefitsApiGateway.Domain.Configurations;
+using BenefitsApiGateway.Domain.Interfaces;
+using BenefitsApiGateway.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using System.Net.Http;
 
 namespace BenefitsApiGateway.Api
 {
@@ -12,9 +15,11 @@ namespace BenefitsApiGateway.Api
     {
         private ApiSettings _apiSettings = new ApiSettings();
 
+        private readonly HttpClient _httpclient;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            _httpclient = new HttpClient();
         }
 
         public IConfiguration Configuration { get; }
@@ -26,6 +31,7 @@ namespace BenefitsApiGateway.Api
             services.Configure<ApiSettings>(appSettings);
             appSettings.Bind(_apiSettings);
             services.AddSingleton<ApiSettings>(_apiSettings);
+            services.AddTransient<IEmployeeRepository>(_ => new EmployeeRepository(_httpclient, _apiSettings.EmployeeApiUri));
 
             services.AddControllers();
 
