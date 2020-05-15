@@ -1,4 +1,4 @@
-﻿namespace Employee.Domain.Models.Configuration
+﻿namespace Employee.Domain.Configuration
 {
     public class ApiSettings
     {

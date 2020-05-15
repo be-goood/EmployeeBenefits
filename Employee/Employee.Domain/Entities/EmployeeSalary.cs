@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Employee.Domain.Models.Entities
+namespace Employee.Domain.Entities
 {
     [Table("Salaries")]
     public class EmployeeSalary

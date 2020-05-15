@@ -1,10 +1,10 @@
-﻿using Employee.Domain.Models.Entities;
-using Employee.Sql.Context;
+﻿using Employee.Sql.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
-using Employee.Domain.Models.Interfaces;
+using Employee.Domain.Entities;
+using Employee.Domain.Interfaces;
 
 namespace Employee.Sql.Queries
 {

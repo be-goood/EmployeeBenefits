@@ -1,5 +1,5 @@
-using Employee.Domain.Models.Entities;
-using Employee.Domain.Models.Interfaces;
+using Employee.Domain.Entities;
+using Employee.Domain.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System;

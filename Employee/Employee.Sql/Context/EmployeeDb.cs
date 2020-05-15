@@ -1,4 +1,4 @@
-﻿using Employee.Domain.Models.Entities;
+﻿using Employee.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Employee.Sql.Context

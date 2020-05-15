@@ -1,7 +1,7 @@
 using System;
-using Employee.Domain.Models.Configuration;
-using Employee.Domain.Models.Entities;
-using Employee.Domain.Models.Interfaces;
+using Employee.Domain.Configuration;
+using Employee.Domain.Entities;
+using Employee.Domain.Interfaces;
 using Employee.Sql.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +28,7 @@ namespace Employee.Api
             var appSettings = Configuration.GetSection("ApiSettings");
             services.Configure<ApiSettings>(appSettings);
             appSettings.Bind(_apiSettings);
-            services.AddSingleton<ApiSettings>(_apiSettings);
+            services.AddSingleton(_apiSettings);
             services.AddScoped<IQuery<EmployeeEntity, Guid>>(_ => new GetEmployeeAndSalaryQuery(_apiSettings.ConnectionString));
 
             services.AddControllers();

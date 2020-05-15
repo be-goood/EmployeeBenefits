@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Employee.Domain.Models.Configuration;
-using Employee.Domain.Models.Entities;
-using Employee.Domain.Models.Interfaces;
+using Employee.Domain.Configuration;
+using Employee.Domain.Entities;
+using Employee.Domain.Interfaces;
 using Employee.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Employee.Domain.Models.Entities
+namespace Employee.Domain.Entities
 {
     [Table("Employees")]
     public class EmployeeEntity

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Employee.Domain.Models.Entities
+namespace Employee.Domain.Entities
 {
     public class Status
     {

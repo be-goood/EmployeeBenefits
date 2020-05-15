@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Employee.Domain.Models.Interfaces
+namespace Employee.Domain.Interfaces
 {
     public interface IQuery<TResult, TParam>
     {
