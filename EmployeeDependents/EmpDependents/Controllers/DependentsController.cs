@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using EmpDependents.Domain.Models.Entities;
-using EmpDependents.Domain.Models.Interfaces;
+using EmpDependents.Domain.Entities;
+using EmpDependents.Domain.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -30,7 +30,7 @@ namespace EmpDependents.Controllers
 
             try
             {
-                model = await _getEmployeeDependentsQuery.ExecuteQueryAsync(employeeId).ConfigureAwait(false);
+                model = await _getEmployeeDependentsQuery.ExecuteQueryAsync(employeeId);
             }
             catch (Exception ex)
             {

@@ -1,4 +1,4 @@
-﻿namespace EmpDependents.Domain.Models.Configuration
+﻿namespace EmpDependents.Domain.Configuration
 {
     public class ApiSettings
     {

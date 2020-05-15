@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EmpDependents.Domain.Models.Entities
+namespace EmpDependents.Domain.Entities
 {
     [Table("Dependents")]
     public class Dependent

@@ -1,4 +1,4 @@
-﻿namespace EmpDependents.Domain.Models.Constants
+﻿namespace EmpDependents.Domain.Constants
 {
     public class Enums
     {

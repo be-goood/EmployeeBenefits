@@ -6325,8 +6325,7 @@
       "BenefitsApiGateway.Logic >= 1.0.0",
       "BenefitsApiGateway.Services >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
-      "Swashbuckle.AspNetCore >= 5.4.1",
-      "System.Net.Http.Formatting.Extension >= 5.2.3"
+      "Swashbuckle.AspNetCore >= 5.4.1"
     ]
   },
   "packageFolders": {
@@ -6383,10 +6382,6 @@
           "Swashbuckle.AspNetCore": {
             "target": "Package",
             "version": "[5.4.1, )"
-          },
-          "System.Net.Http.Formatting.Extension": {
-            "target": "Package",
-            "version": "[5.2.3, )"
           }
         },
         "imports": [

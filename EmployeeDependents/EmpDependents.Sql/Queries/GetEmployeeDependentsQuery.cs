@@ -1,5 +1,5 @@
-﻿using EmpDependents.Domain.Models.Entities;
-using EmpDependents.Domain.Models.Interfaces;
+﻿using EmpDependents.Domain.Entities;
+using EmpDependents.Domain.Interfaces;
 using EmpDependents.Sql.Context;
 using Microsoft.EntityFrameworkCore;
 using System;

@@ -1,4 +1,4 @@
-﻿using EmpDependents.Domain.Models.Entities;
+﻿using EmpDependents.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace EmpDependents.Sql.Context
