@@ -54,3 +54,7 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcorea
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\_Imports.razor.g.cs
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Services.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Services.pdb

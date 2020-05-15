@@ -4,6 +4,120 @@
     "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BlazorPortal\\BlazorPortal.csproj": {}
   },
   "projects": {
+    "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj",
+        "projectName": "BenefitsPortal.Domain",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj",
+        "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\BenefitsPortal.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\BenefitsPortal.Services.csproj",
+        "projectName": "BenefitsPortal.Services",
+        "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\BenefitsPortal.Services.csproj",
+        "packagesPath": "C:\\Users\\jvela\\.nuget\\packages\\",
+        "outputPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jvela\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "System.Net.Http.Formatting.Extension": {
+              "target": "Package",
+              "version": "[5.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BlazorPortal\\BlazorPortal.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,7 +140,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Domain\\BenefitsPortal.Domain.csproj"
+              },
+              "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\BenefitsPortal.Services.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BenefitsPortal.Services\\BenefitsPortal.Services.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

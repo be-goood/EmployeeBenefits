@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>93a33546-9760-4437-a025-b04156d6e072</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BenefitsPortal.Domain\BenefitsPortal.Domain.csproj" />
-    <ProjectReference Include="..\BenefitsPortal.Services\BenefitsPortal.Services.csproj" />
   </ItemGroup>
 
 </Project>

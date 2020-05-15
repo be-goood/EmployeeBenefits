@@ -1,6 +1,6 @@
 using System;
 
-namespace BlazorPortal.Data
+namespace BenefitsPortal.Domain.Models
 {
     public class EmployeeBenefits
     {

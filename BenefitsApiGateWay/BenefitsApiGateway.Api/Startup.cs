@@ -14,12 +14,9 @@ namespace BenefitsApiGateway.Api
     public class Startup
     {
         private ApiSettings _apiSettings = new ApiSettings();
-
-        private readonly HttpClient _httpclient;
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            _httpclient = new HttpClient();
         }
 
         public IConfiguration Configuration { get; }
