@@ -7,9 +7,35 @@
 <h1>Employee Benefits</h1>
 
 <p>Overview of employee benefits.</p>
-<p>
-    <a href="/employee/add">Create</a>
-</p>
+
+<div class="col-12">
+    <h3><b>Enter Publisher Information</b></h3>
+    <hr />
+
+    <EditForm Model="@employee" OnValidSubmit="@SaveEmployee">
+        @*<DataAnnotationsValidator />*@
+
+        <div class="col-12 row">
+            <label class="col-2 font-weight-bold">First name :</label>
+            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.EmployeeName" placeholder="First name" />
+            &nbsp;<ValidationMessage For="@(() => employee.EmployeeName)" />
+        </div>
+        <br />
+        <div class="col-12 row">
+            <label class="col-2 font-weight-bold">Last name :</label>
+            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.EmployeeName" placeholder="Last name" />
+            &nbsp;<ValidationMessage For="@(() => employee.EmployeeName)" />
+        </div>
+        <br />
+        <div class="col-12 row">
+            <span class="col-2"></span>
+            <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await SaveEmployee())">Save</button>
+        </div>
+
+    </EditForm>
+
+</div>
+<br />
 
 @if (eMedBenefits == null)
 {
@@ -31,17 +57,17 @@ else
         <tbody>
             @foreach (var eb in eMedBenefits)
             {
-            <tr>
-                <td>@eb.EmployeeName</td>
-                <td>@eb.Dependents</td>
-                <td>@eb.BaseEmployeeCost</td>
-                <td>@eb.EmployeeDiscountAmount</td>
-                <td>@eb.TotalEmployeeCost</td>
-                <td>
-                    <a href='/employee/edit/@eb.EmployeeId'>Edit</a>  |
-                    <a href='/employee/delete/@eb.EmployeeId'>Delete</a>
-                </td>
-            </tr>
+                <tr>
+                    <td>@eb.EmployeeName</td>
+                    <td>@eb.Dependents</td>
+                    <td>@eb.BaseEmployeeCost</td>
+                    <td>@eb.EmployeeDiscountAmount</td>
+                    <td>@eb.TotalEmployeeCost</td>
+                    <td>
+                        <a href='/employee/edit/@eb.EmployeeId'>Edit</a>  |
+                        <a href='/employee/delete/@eb.EmployeeId'>Delete</a>
+                    </td>
+                </tr>
             }
         </tbody>
     </table>
@@ -49,9 +75,18 @@ else
 
 @code {
     private List<MedicalBenefit> eMedBenefits;
+    private MedicalBenefit employee = new MedicalBenefit();
+    ElementReference publisherNameTextBox;
 
     protected override async Task OnInitializedAsync()
     {
         eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+    }
+
+    private async Task SaveEmployee()
+    {
+        await Task.Run(() =>
+        {
+        });
     }
 }
