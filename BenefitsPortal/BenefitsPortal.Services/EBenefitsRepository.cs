@@ -1,3 +1,4 @@
+using BenefitsPortal.Domain.Interfaces;
 using BenefitsPortal.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BenefitsPortal.Services
 {
-    public class EBenefitsRepository
+    public class EBenefitsRepository : IEBenefitsRepository
     {
         private HttpClient _client = null;
         public EBenefitsRepository(HttpClient client, string apiGatewayBaseServiceUri)
