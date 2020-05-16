@@ -1,8 +1,8 @@
 ﻿@page "/ebenefits"
 
 @using BenefitsPortal.Domain.Models 
-@using BenefitsPortal.Services
-@inject EBenefitsRepository BenefitsService
+@using BenefitsPortal.Domain.Interfaces
+@inject IEBenefitsRepository eBenefitsRepository
 
 <h1>Employee Benefits</h1>
 
@@ -54,6 +54,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        employeeBenefits = await BenefitsService.GetEmployeeBenefitstAsync();
+        employeeBenefits = await eBenefitsRepository.GetEmployeeBenefitstAsync();
     }
 }

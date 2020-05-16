@@ -7,6 +7,7 @@ using BlazorPortal.Data;
 using System.Net.Http;
 using BenefitsPortal.Domain.Configurations;
 using BenefitsPortal.Services;
+using BenefitsPortal.Domain.Interfaces;
 
 namespace BlazorPortal
 {
@@ -34,7 +35,7 @@ namespace BlazorPortal
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             //services.AddSingleton<EmployeeBenefitsService>();
-            services.AddTransient(_ => new EBenefitsRepository(new HttpClient(), _appSettings.ApiGatewayUri));
+            services.AddTransient<IEBenefitsRepository>(_ => new EBenefitsRepository(new HttpClient(), _appSettings.ApiGatewayUri));
             //services.AddTransient<IBenefitsRepository>(_ => new BenefitsRepository(new HttpClient(), _apiSettings.MedicalBenefitsApiUri));
         }
 
