@@ -94,6 +94,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[6.0.8, )"
+            },
             "System.Net.Http.Formatting.Extension": {
               "target": "Package",
               "version": "[5.2.3, )"

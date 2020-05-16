@@ -1,12 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "ZmkfBZE4zc9HtPykTMAIznGgA/mVLHGh0YR+640wTVoTap+mnJNpft30XzpEtkhWwyeaG2bBzRmSF9MTDdUyNw==",
+  "dgSpecHash": "DlqZrj08aG8nnQzMbtu6TRJkVhLCeulctXUAGp7wK8np4k+thh0d9CXnE6c0auzNlJ0/3iZ/5uiH5kWzx0aL7w==",
   "success": true,
   "projectFilePath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsPortal\\BlazorPortal\\BlazorPortal.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\jvela\\.nuget\\packages\\newtonsoft.json\\6.0.8\\newtonsoft.json.6.0.8.nupkg.sha512",
     "C:\\Users\\jvela\\.nuget\\packages\\system.net.http.formatting.extension\\5.2.3\\system.net.http.formatting.extension.5.2.3.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Newtonsoft.Json 6.0.8' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
     {
       "code": "NU1701",
       "level": "Warning",

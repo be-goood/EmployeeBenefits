@@ -52,7 +52,7 @@ namespace BenefitsPortal.Services
 
         public async Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync()
         {
-            //var data = await GetEmployeeBenefitstTestAsync();
+            var data = await GetEmployeeBenefitstTestAsync();
             return await GetEmployeeBenefitsTestAsync();
             //try
             //{
