@@ -34,7 +34,7 @@ namespace BlazorPortal
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
             //services.AddSingleton<EmployeeBenefitsService>();
-            services.AddTransient(_ => new EmployeeBenefitsService(new HttpClient(), _appSettings.ApiGatewayUri));
+            services.AddTransient(_ => new EBenefitsRepository(new HttpClient(), _appSettings.ApiGatewayUri));
             //services.AddTransient<IBenefitsRepository>(_ => new BenefitsRepository(new HttpClient(), _apiSettings.MedicalBenefitsApiUri));
         }
 

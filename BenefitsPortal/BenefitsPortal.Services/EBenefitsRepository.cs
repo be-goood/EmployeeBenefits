@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace BenefitsPortal.Services
 {
-    public class EmployeeBenefitsService
+    public class EBenefitsRepository
     {
         private HttpClient _client = null;
-        public EmployeeBenefitsService(HttpClient client, string apiGatewayBaseServiceUri)
+        public EBenefitsRepository(HttpClient client, string apiGatewayBaseServiceUri)
         {
             client.BaseAddress = new Uri(apiGatewayBaseServiceUri);
             client.DefaultRequestHeaders.Accept.Clear();
