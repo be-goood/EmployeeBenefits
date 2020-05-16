@@ -59,3 +59,5 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcorea
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Domain.pdb
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\BenefitsPortal.Services.pdb
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EMedBenefit\GetEMedBenefit.razor.g.cs
+C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\EMedBenefit\GetEMedBenefit.razor.g.cs

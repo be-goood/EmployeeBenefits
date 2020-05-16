@@ -28,26 +28,27 @@ namespace BenefitsPortal.Services
 
         public async Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync()
         {
-            try
-            {
-                var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
-                if (response.IsSuccessStatusCode)
-                {
-                    var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
-                    return MapResults(data);
-                }
-                else
-                {
-                    // add log
-                    // wrap response in a generic service response
-                    return new List<EmployeeBenefits>();
-                }
-            }
-            catch (Exception ex)
-            {
-                // add log
-                throw;
-            }
+            return await GetEmployeeBenefitsTestAsync();
+            //try
+            //{
+            //    var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
+            //    if (response.IsSuccessStatusCode)
+            //    {
+            //        var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
+            //        return MapResults(data);
+            //    }
+            //    else
+            //    {
+            //        // add log
+            //        // wrap response in a generic service response
+            //        return new List<EmployeeBenefits>();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    // add log
+            //    throw;
+            //}
         }
 
         private List<EmployeeBenefits> MapResults(List<EmpDependetsBenefitDetails> data)
@@ -75,24 +76,37 @@ namespace BenefitsPortal.Services
             return results;
         }
 
-        public Task<List<EmployeeBenefits>> GetEmployeeBenefitsTestAsync()
+        public Task<List<MedicalBenefit>> GetEmployeeMedBenefitsTestAsync()
         {
             var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new EmployeeBenefits
+            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new MedicalBenefit
             {
                 EmployeeName = "Jorge Velazquez",
-                BenefitPlan = Providers[rng.Next(Providers.Length)],
-                CoverageBeginDate = DateTime.Now,
-                DeducationBeginDate = DateTime.Now,
-                Coverage = "Family",
-                CalculatedCoverage = 1000m,
-                //Dependents = new List<string>() { "Ivy Velazquez", "Daphne Velazquez" },
-                Dependents = "Ivy Velazquez   Daphne Velazquez",
-                Beneficiaries = "Heather Velazquez",
-                SemiMonthlyEmployeeCost = 100m,
-                SemiMonthlyEmployerContributions = 700m,
-            }).ToList()); ;
+                Dependents = "Ivy Velazquez, Daphne Velazquez",
+                BaseEmployeeCost = 100m,
+                EmployeeDiscountAmount = 700m,
+                TotalEmployeeCost = 700m,
+            }).ToList()); 
         }
+
+        public Task<List<EmployeeBenefits>> GetEmployeeBenefitsTestAsync()
+            {
+                var rng = new Random();
+                return Task.FromResult(Enumerable.Range(1, 5).Select(index => new EmployeeBenefits
+                {
+                    EmployeeName = "Jorge Velazquez",
+                    BenefitPlan = Providers[rng.Next(Providers.Length)],
+                    CoverageBeginDate = DateTime.Now,
+                    DeducationBeginDate = DateTime.Now,
+                    Coverage = "Family",
+                    CalculatedCoverage = 1000m,
+                    //Dependents = new List<string>() { "Ivy Velazquez", "Daphne Velazquez" },
+                    Dependents = "Ivy Velazquez   Daphne Velazquez",
+                    Beneficiaries = "Heather Velazquez",
+                    SemiMonthlyEmployeeCost = 100m,
+                    SemiMonthlyEmployerContributions = 700m,
+                }).ToList()); ;
+            }
 
     }
 }

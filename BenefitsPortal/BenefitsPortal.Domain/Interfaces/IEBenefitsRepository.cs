@@ -7,5 +7,6 @@ namespace BenefitsPortal.Domain.Interfaces
     public interface IEBenefitsRepository
     {
         Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync();
+        Task<List<MedicalBenefit>> GetEmployeeMedBenefitsTestAsync();
     }
 }
