@@ -1,12 +1,15 @@
 ﻿@page "/emedbenefit"
 
-@using BenefitsPortal.Domain.Models 
+@using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
 
 <h1>Employee Benefits</h1>
 
 <p>Overview of employee benefits.</p>
+<p>
+    <a href="/employee/add">Create</a>
+</p>
 
 @if (eMedBenefits == null)
 {
@@ -22,6 +25,7 @@ else
                 <th>Base Employee Cost</th>
                 <th>Employee Discount Amount</th>
                 <th>Total Employee Cost</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,6 +37,10 @@ else
                 <td>@eb.BaseEmployeeCost</td>
                 <td>@eb.EmployeeDiscountAmount</td>
                 <td>@eb.TotalEmployeeCost</td>
+                <td>
+                    <a href='/employee/edit/@eb.EmployeeId'>Edit</a>  |
+                    <a href='/employee/delete/@eb.EmployeeId'>Delete</a>
+                </td>
             </tr>
             }
         </tbody>

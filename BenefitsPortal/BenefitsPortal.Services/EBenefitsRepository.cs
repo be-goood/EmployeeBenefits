@@ -81,6 +81,7 @@ namespace BenefitsPortal.Services
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 5).Select(index => new MedicalBenefit
             {
+                EmployeeId = Guid.NewGuid(),
                 EmployeeName = "Jorge Velazquez",
                 Dependents = "Ivy Velazquez, Daphne Velazquez",
                 BaseEmployeeCost = 100m,

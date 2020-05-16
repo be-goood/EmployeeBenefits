@@ -1,7 +1,10 @@
+using System;
+
 namespace BenefitsPortal.Domain.Models
 {
     public class MedicalBenefit
     {
+        public Guid EmployeeId { get; set; }
         public string EmployeeName { get; set; }
 
         public decimal BaseEmployeeCost { get; set; }
