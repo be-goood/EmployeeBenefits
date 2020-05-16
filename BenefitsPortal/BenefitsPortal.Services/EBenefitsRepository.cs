@@ -24,9 +24,35 @@ namespace BenefitsPortal.Services
         {
             "UnitedHealth Group", "Anthem ", "Centene ", "Humana ", "Cigna ", "WellCare Health Plans", "Molina Healthcare"
         };
+        
+        public async Task<List<EmpDependetsBenefitDetails>> GetEmployeeBenefitstTestAsync()
+        {
+
+            try
+            {
+                var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
+                    return data;
+                }
+                else
+                {
+                    // add log
+                    // wrap response in a generic service response
+                    return new List<EmpDependetsBenefitDetails>();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
 
         public async Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync()
         {
+            //var data = await GetEmployeeBenefitstTestAsync();
             return await GetEmployeeBenefitsTestAsync();
             //try
             //{
