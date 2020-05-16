@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace BenefitsPortal.Domain.Models
 {
@@ -11,6 +12,7 @@ namespace BenefitsPortal.Domain.Models
         public DateTime DeducationBeginDate { get; set; }
         public string Coverage { get; set; }
         public decimal CalculatedCoverage { get; set; }
+        //public List<string> Dependents { get; set; }
         public string Dependents { get; set; }
         public string Beneficiaries { get; set; }
         public decimal SemiMonthlyEmployeeCost { get; set; }
