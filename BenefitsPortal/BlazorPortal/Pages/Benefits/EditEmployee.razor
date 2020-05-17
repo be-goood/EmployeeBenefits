@@ -1,0 +1,117 @@
+﻿@page "/benefits/employee/edit/{empId}"
+
+@using BenefitsPortal.Domain.Models
+@using BenefitsPortal.Domain.Interfaces
+@inject IEBenefitsRepository eBenefitsRepository
+@inject NavigationManager navigation
+
+<h1>Employee Details</h1>
+
+
+@if (employee == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="col-12">
+        <hr />
+        <p>
+            <a href="/benefits/dependent/add">New Dependent</a>
+        </p>
+
+        <EditForm Model="@employee" OnValidSubmit="@UpdateEmployee">
+            @*<DataAnnotationsValidator />*@
+
+            <div class="col-12 row">
+                <label class="col-2 font-weight-bold">First name :</label>
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.FirstName" placeholder="First name" />
+                &nbsp;<ValidationMessage For="@(() => employee.FirstName)" />
+            </div>
+            <br />
+            <div class="col-12 row">
+                <label class="col-2 font-weight-bold">Last name :</label>
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.LastName" placeholder="Last name" />
+                &nbsp;<ValidationMessage For="@(() => employee.LastName)" />
+            </div>
+            <br />
+            <div class="col-12 row">
+                <span class="col-2"></span>
+                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateEmployee())">Update</button>
+                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteEmployee())">Delete</button>
+                <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
+            </div>
+
+        </EditForm>
+
+    </div>
+    <br />
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Dependent Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dependent in employee.Dependents)
+            {
+                <tr>
+                    <td>@dependent.Name</td>
+                    <td>
+                        <a href='/benefits/dependent/edit/@dependent.Id'>Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    [Parameter]
+    public string empId { get; set; }
+
+    private List<Dependent> dependents;
+    private Employee employee;
+    private Dependent dependent;
+    ElementReference publisherNameTextBox;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(() =>
+        {
+            employee = new Employee() { Id = Guid.Parse(empId), FirstName = "Jorge", LastName = "Velazquez" };
+            employee.Dependents = new List<Dependent>()
+            {
+                new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Faith", LastName = "Velazquez" },
+                new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Ariel", LastName = "Velazquez" },
+                };
+        });
+        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+    }
+
+    private async Task UpdateEmployee()
+    {
+        await Task.Run(() =>
+        {
+        });
+    }
+
+    private async Task DeleteEmployee()
+    {
+        await Task.Run(() =>
+        {
+        });
+    }
+
+    private async Task Cancel()
+    {
+        await Task.Run(() =>
+        {
+            navigation.NavigateTo("/benefits/Benefit");
+
+        });
+    }
+}

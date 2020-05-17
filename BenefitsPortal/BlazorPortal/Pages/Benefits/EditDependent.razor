@@ -1,0 +1,85 @@
+﻿@page "/benefits/dependent/edit/{dependentId}"
+
+@using BenefitsPortal.Domain.Models
+@using BenefitsPortal.Domain.Interfaces
+@inject IEBenefitsRepository eBenefitsRepository
+@inject NavigationManager navigation
+
+<h1>Dependent Details</h1>
+
+
+@if (dependent == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="col-12">
+        <hr />
+        <EditForm Model="@dependent" OnValidSubmit="@UpdateDependent">
+            @*<DataAnnotationsValidator />*@
+
+            <div class="col-12 row">
+                <label class="col-2 font-weight-bold">First name :</label>
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="dependent.FirstName" placeholder="First name" />
+                &nbsp;<ValidationMessage For="@(() => dependent.FirstName)" />
+            </div>
+            <br />
+            <div class="col-12 row">
+                <label class="col-2 font-weight-bold">Last name :</label>
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="dependent.LastName" placeholder="Last name" />
+                &nbsp;<ValidationMessage For="@(() => dependent.LastName)" />
+            </div>
+            <br />
+            <div class="col-12 row">
+                <span class="col-2"></span>
+                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateDependent())">Update</button>
+                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteDependent())">Delete</button>
+                <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
+            </div>
+
+        </EditForm>
+
+    </div>
+    <br />
+}
+
+@code {
+    [Parameter]
+    public string dependentId { get; set; }
+
+    private Dependent dependent;
+    ElementReference publisherNameTextBox;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(() =>
+        {
+            dependent = new Dependent() { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(dependentId), FirstName = "Faith", LastName = "Velazquez" };
+        });
+        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+    }
+
+    private async Task UpdateDependent()
+    {
+        await Task.Run(() =>
+        {
+        });
+    }
+
+    private async Task DeleteDependent()
+    {
+        await Task.Run(() =>
+        {
+        });
+    }
+
+    private async Task Cancel()
+    {
+        await Task.Run(() =>
+        {
+            navigation.NavigateTo("/benefits/Benefit");
+        });
+    }
+}

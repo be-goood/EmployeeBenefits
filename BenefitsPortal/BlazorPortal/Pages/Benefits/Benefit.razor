@@ -1,18 +1,17 @@
-﻿@page "/emedbenefit"
+﻿@page "/benefits/Benefit"
 
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
 
-<h1>Employee Benefits</h1>
+<h1>Overview of employee benefits</h1>
 
-<p>Overview of employee benefits.</p>
 
 <div class="col-12">
-    <h3><b>Enter Publisher Information</b></h3>
+    <h3><b>Add New Employee</b></h3>
     <hr />
 
-    <EditForm Model="@employee" OnValidSubmit="@SaveEmployee">
+    <EditForm Model="@employee" OnValidSubmit="@CreateEmployee">
         @*<DataAnnotationsValidator />*@
 
         <div class="col-12 row">
@@ -29,7 +28,7 @@
         <br />
         <div class="col-12 row">
             <span class="col-2"></span>
-            <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await SaveEmployee())">Save</button>
+            <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await CreateEmployee())">Create</button>
         </div>
 
     </EditForm>
@@ -64,8 +63,7 @@ else
                     <td>@eb.EmployeeDiscountAmount</td>
                     <td>@eb.TotalEmployeeCost</td>
                     <td>
-                        <a href='/employee/edit/@eb.EmployeeId'>Edit</a>  |
-                        <a href='/employee/delete/@eb.EmployeeId'>Delete</a>
+                        <a href='/benefits/employee/edit/@eb.EmployeeId'>Edit</a>
                     </td>
                 </tr>
             }
@@ -83,7 +81,7 @@ else
         eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
     }
 
-    private async Task SaveEmployee()
+    private async Task CreateEmployee()
     {
         await Task.Run(() =>
         {
