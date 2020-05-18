@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using EmpDependents.Domain.Interfaces;
+using EmpDependents.Sql.Commands;
 using Employee.Domain.Configuration;
 using Employee.Domain.Entities;
 using Employee.Domain.Interfaces;
@@ -32,6 +34,8 @@ namespace Employee.Api
             services.AddSingleton(_apiSettings);
             services.AddScoped<IQuery<EmployeeEntity, Guid>>(_ => new GetEmployeeAndSalaryQuery(_apiSettings.ConnectionString));
             services.AddScoped<IQueryNoParam<List<EmployeeEntity>>>(_ => new GetAllEmployeesAndSalariesQuery(_apiSettings.ConnectionString));
+            services.AddScoped<ICommandNoResult<EmployeeEntity>>(_ => new AddEmployeeCommand(_apiSettings.ConnectionString));
+            services.AddScoped<ICommandNoResult<EmployeeEntity>>(_ => new UpdateEmployeeCommand(_apiSettings.ConnectionString));
 
             services.AddControllers();
 

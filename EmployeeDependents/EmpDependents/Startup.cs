@@ -1,5 +1,6 @@
 using EmpDependents.Domain.Entities;
 using EmpDependents.Domain.Interfaces;
+using EmpDependents.Sql.Commands;
 using EmpDependents.Sql.Queries;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -31,6 +32,8 @@ namespace EmpDependents
             appSettings.Bind(_apiSettings);
             services.AddSingleton<ApiSettings>(_apiSettings);
             services.AddScoped<IQuery<List<Dependent>, Guid>>(_ => new GetEmployeeDependentsQuery(_apiSettings.ConnectionString));
+            services.AddScoped<ICommandNoResult<Dependent>>(_ => new AddDependentCommand(_apiSettings.ConnectionString));
+            services.AddScoped<ICommandNoResult<Dependent>>(_ => new UpdateDependentCommand(_apiSettings.ConnectionString));
 
             services.AddControllers();
 

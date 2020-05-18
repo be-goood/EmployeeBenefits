@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using EmpDependents.Domain.Interfaces;
 using Employee.Domain.Configuration;
 using Employee.Domain.Entities;
 using Employee.Domain.Interfaces;
@@ -17,12 +18,17 @@ namespace Employee.Api.Controllers
         private ApiSettings _settings;
         private IQuery<EmployeeEntity, Guid> _getEmployeeAndCurrentSalaryQuery;
         private IQueryNoParam<List<EmployeeEntity>> _getAllEmployeesAndSalariesQuery;
+        private ICommandNoResult<EmployeeEntity> _addEmployeeCommand;
+        private ICommandNoResult<EmployeeEntity> _updateEmployeeCommand;
 
-        public EmployeeController(IOptionsMonitor<ApiSettings> settings, IQuery<EmployeeEntity, Guid> getEmployeeAndCurrentSalaryQuery, IQueryNoParam<List<EmployeeEntity>> getAllEmployeesAndSalariesQuery)
+        public EmployeeController(IOptionsMonitor<ApiSettings> settings, IQuery<EmployeeEntity, Guid> getEmployeeAndCurrentSalaryQuery, IQueryNoParam<List<EmployeeEntity>> getAllEmployeesAndSalariesQuery,
+            ICommandNoResult<EmployeeEntity> addEmployeeCommand, ICommandNoResult<EmployeeEntity> updateEmployeeCommand)
         {
             _settings = settings.CurrentValue;
             _getEmployeeAndCurrentSalaryQuery = getEmployeeAndCurrentSalaryQuery;
             _getAllEmployeesAndSalariesQuery = getAllEmployeesAndSalariesQuery;
+            _addEmployeeCommand = addEmployeeCommand;
+            _updateEmployeeCommand = updateEmployeeCommand;
         }
 
         [HttpGet]

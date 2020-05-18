@@ -14,11 +14,16 @@ namespace EmpDependents.Controllers
     {
         private ApiSettings _settings;
         private IQuery<List<Dependent>, Guid> _getEmployeeDependentsQuery;
+        private ICommandNoResult<Dependent> _addDependentCommand;
+        private ICommandNoResult<Dependent> _updateDependentCommand;
 
-        public DependentsController(IOptionsMonitor<ApiSettings> settings, IQuery<List<Dependent>, Guid> getEmployeeDependentsQuery)
+        public DependentsController(IOptionsMonitor<ApiSettings> settings, IQuery<List<Dependent>, Guid> getEmployeeDependentsQuery,
+            ICommandNoResult<Dependent> addDependentCommand, ICommandNoResult<Dependent> updateDependentCommand)
         {
             _settings = settings.CurrentValue;
             _getEmployeeDependentsQuery = getEmployeeDependentsQuery;
+            _addDependentCommand = addDependentCommand;
+            _updateDependentCommand = updateDependentCommand;
         }
 
         [HttpGet]
