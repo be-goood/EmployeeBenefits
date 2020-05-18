@@ -59,9 +59,9 @@ else
                 <tr>
                     <td>@eb.EmployeeName</td>
                     <td>@eb.Dependents</td>
-                    <td>@eb.BaseEmployeeCost</td>
-                    <td>@eb.EmployeeDiscountAmount</td>
-                    <td>@eb.TotalEmployeeCost</td>
+                    <td>$@string.Format("{0:0.00}", eb.BaseEmployeeCost)</td>
+                    <td>$@string.Format("{0:0.00}", eb.EmployeeDiscountAmount)</td>
+                    <td>$@string.Format("{0:0.00}", eb.TotalEmployeeCost)</td>
                     <td>
                         <a href='/benefits/employee/edit/@eb.EmployeeId'>Edit</a>
                     </td>
@@ -78,7 +78,8 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+        eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsAsync();
     }
 
     private async Task CreateEmployee()

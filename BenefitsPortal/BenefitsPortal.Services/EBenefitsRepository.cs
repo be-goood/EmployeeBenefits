@@ -76,6 +76,50 @@ namespace BenefitsPortal.Services
             return results;
         }
 
+        public async Task<List<MedicalBenefit>> GetEmployeeMedBenefitsAsync()
+        {
+            try
+            {
+                var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
+                    return MapBenefitResults(data);
+                }
+                else
+                {
+                    // add log
+                    // wrap response in a generic service response
+                    return new List<MedicalBenefit>();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
+
+        private List<MedicalBenefit> MapBenefitResults(List<EmpDependetsBenefitDetails> data)
+        {
+            var rng = new Random();
+            var results = new List<MedicalBenefit>();
+            foreach (var item in data)
+            {
+                var temp = new MedicalBenefit();
+                temp.EmployeeId = item.Id;
+                temp.EmployeeName = item.Name;
+                var dNames = item.Dependents.Select(s => s.Name).ToList();
+                temp.Dependents = string.Join(", ", dNames);
+                temp.BaseEmployeeCost = item.TotalBenefitsDiscount + item.TotalBenefitsCost;
+                temp.EmployeeDiscountAmount = item.TotalBenefitsDiscount;
+                temp.TotalEmployeeCost = item.TotalBenefitsCost;
+
+                results.Add(temp);
+            }
+            return results;
+        }
+
         public Task<List<MedicalBenefit>> GetEmployeeMedBenefitsTestAsync()
         {
             var rng = new Random();
@@ -87,7 +131,7 @@ namespace BenefitsPortal.Services
                 BaseEmployeeCost = 100m,
                 EmployeeDiscountAmount = 700m,
                 TotalEmployeeCost = 700m,
-            }).ToList()); 
+            }).ToList());
         }
 
         public Task<List<EmployeeBenefits>> GetEmployeeBenefitsTestAsync()

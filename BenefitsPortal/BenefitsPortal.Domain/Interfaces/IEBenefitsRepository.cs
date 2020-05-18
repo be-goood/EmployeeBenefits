@@ -8,5 +8,6 @@ namespace BenefitsPortal.Domain.Interfaces
     {
         Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync();
         Task<List<MedicalBenefit>> GetEmployeeMedBenefitsTestAsync();
+        Task<List<MedicalBenefit>> GetEmployeeMedBenefitsAsync();
     }
 }
