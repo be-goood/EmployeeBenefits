@@ -34,6 +34,7 @@ namespace BenefitsApiGateway.Logic
                 foreach (var d in employee.Dependents)
                 {
                     var dTemp = new InputDependent();
+                    dTemp.Id = d.Id;
                     dTemp.Name = $"{d.FirstName} {d.LastName}";
                     eTemp.InputDependents.Add(dTemp);
                 }
