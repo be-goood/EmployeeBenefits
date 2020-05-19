@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EmpDependents.Domain\EmpDependents.Domain.csproj" />
+    <ProjectReference Include="..\EmpDependents.Logic\EmpDependents.Logic.csproj" />
     <ProjectReference Include="..\EmpDependents.Sql\EmpDependents.Sql.csproj" />
   </ItemGroup>
 

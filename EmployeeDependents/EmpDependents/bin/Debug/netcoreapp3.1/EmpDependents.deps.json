@@ -25,6 +25,7 @@
       "EmpDependents/1.0.0": {
         "dependencies": {
           "EmpDependents.Domain": "1.0.0",
+          "EmpDependents.Logic": "1.0.0",
           "EmpDependents.Sql": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.2",
           "Swashbuckle.AspNetCore": "5.4.1",
@@ -2163,6 +2164,17 @@
         },
         "compile": {
           "EmpDependents.Domain.dll": {}
+        }
+      },
+      "EmpDependents.Logic/1.0.0": {
+        "dependencies": {
+          "EmpDependents.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EmpDependents.Logic.dll": {}
+        },
+        "compile": {
+          "EmpDependents.Logic.dll": {}
         }
       },
       "EmpDependents.Sql/1.0.0": {
@@ -4912,6 +4924,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "EmpDependents.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EmpDependents.Logic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

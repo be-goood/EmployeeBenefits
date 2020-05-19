@@ -7,3 +7,6 @@ C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Deb
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.AssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.dll
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.pdb
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\bin\Debug\netcoreapp3.1\EmpDependents.Domain.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\bin\Debug\netcoreapp3.1\EmpDependents.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents.Logic\obj\Debug\netcoreapp3.1\EmpDependents.Logic.csproj.CopyComplete

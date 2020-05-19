@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using EmpDependents.Domain.Entities;
 using EmpDependents.Domain.Interfaces;
+using EmpDependents.Domain.Models;
+using EmpDependents.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
@@ -14,14 +16,16 @@ namespace EmpDependents.Controllers
     {
         private ApiSettings _settings;
         private IQuery<List<Dependent>, Guid> _getEmployeeDependentsQuery;
-        private ICommandNoResult<Dependent> _addDependentCommand;
-        private ICommandNoResult<Dependent> _updateDependentCommand;
+        private IAddCommandNoResult<Dependent> _addDependentCommand;
+        private IUpdateCommandNoResult<Dependent> _updateDependentCommand;
+        private IQuery<Dependent, Guid> _getEmployeeDependentQuery;
 
         public DependentsController(IOptionsMonitor<ApiSettings> settings, IQuery<List<Dependent>, Guid> getEmployeeDependentsQuery,
-            ICommandNoResult<Dependent> addDependentCommand, ICommandNoResult<Dependent> updateDependentCommand)
+            IAddCommandNoResult<Dependent> addDependentCommand, IUpdateCommandNoResult<Dependent> updateDependentCommand, IQuery<Dependent, Guid> getEmployeeDependentQuery)
         {
             _settings = settings.CurrentValue;
             _getEmployeeDependentsQuery = getEmployeeDependentsQuery;
+            _getEmployeeDependentQuery = getEmployeeDependentQuery;
             _addDependentCommand = addDependentCommand;
             _updateDependentCommand = updateDependentCommand;
         }
@@ -44,5 +48,38 @@ namespace EmpDependents.Controllers
 
             return Ok(model);
         }
+
+        [HttpPost]
+        [Route("AddDependet")]
+        public async Task<IActionResult> AddDependet(AddDependentModel dependet)
+        {
+            try
+            {
+                await new DependentTransactions().AddDependent(_addDependentCommand, dependet).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateDependet")]
+        public async Task<IActionResult> UpdateDependet(UpdateDependentModel dependent)
+        {
+            try
+            {
+                await new DependentTransactions().UpdateDependent(_updateDependentCommand, _getEmployeeDependentQuery, dependent).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
     }
 }

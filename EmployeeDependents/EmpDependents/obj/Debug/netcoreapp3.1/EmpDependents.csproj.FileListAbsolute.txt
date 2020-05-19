@@ -131,3 +131,5 @@ C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\bin\Debug\net
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\obj\Debug\netcoreapp3.1\EmpDependents.csproj.CoreCompileInputs.cache
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\obj\Debug\netcoreapp3.1\EmpDependents.MvcApplicationPartsAssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\obj\Debug\netcoreapp3.1\EmpDependents.MvcApplicationPartsAssemblyInfo.cache
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\bin\Debug\netcoreapp3.1\EmpDependents.Logic.dll
+C:\PrototypeCode\EmployeeBenefits\EmployeeDependents\EmpDependents\bin\Debug\netcoreapp3.1\EmpDependents.Logic.pdb
