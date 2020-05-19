@@ -16,12 +16,12 @@ namespace EmpDependents.Sql.Queries
             _connectionString = connectionString;
         }
 
-        public async Task<Dependent> ExecuteQueryAsync(Guid employeeId)
+        public async Task<Dependent> ExecuteQueryAsync(Guid id)
         {
             using (var dbContext = new DependentDb(_connectionString))
             {
                 var model = await dbContext.Dependent
-                    .Where(w => w.EmployeeId == employeeId)
+                    .Where(w => w.Id == id)
                     .FirstOrDefaultAsync();
 
                 return model;
