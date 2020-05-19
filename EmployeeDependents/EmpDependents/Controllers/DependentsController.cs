@@ -55,7 +55,7 @@ namespace EmpDependents.Controllers
         {
             try
             {
-                await new DependentTransactions().AddDependent(_addDependentCommand, dependet).ConfigureAwait(false);
+                await new DependentTransactions().AddDependentAsync(_addDependentCommand, dependet).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
@@ -71,7 +71,7 @@ namespace EmpDependents.Controllers
         {
             try
             {
-                await new DependentTransactions().UpdateDependent(_updateDependentCommand, _getEmployeeDependentQuery, dependent).ConfigureAwait(false);
+                await new DependentTransactions().UpdateDependentAsync(_updateDependentCommand, _getEmployeeDependentQuery, dependent).ConfigureAwait(false);
             }
             catch (Exception ex)
             {

@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BenefitsApiGateway.Domain\BenefitsApiGateway.Domain.csproj" />
+    <ProjectReference Include="..\BenefitsApiGateway.Services\BenefitsApiGateway.Services.csproj" />
   </ItemGroup>
 
 </Project>

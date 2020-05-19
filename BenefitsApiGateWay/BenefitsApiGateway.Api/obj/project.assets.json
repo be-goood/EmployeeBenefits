@@ -1899,7 +1899,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "BenefitsApiGateway.Domain": "1.0.0"
+          "BenefitsApiGateway.Domain": "1.0.0",
+          "BenefitsApiGateway.Services": "1.0.0"
         },
         "compile": {
           "bin/placeholder/BenefitsApiGateway.Logic.dll": {}

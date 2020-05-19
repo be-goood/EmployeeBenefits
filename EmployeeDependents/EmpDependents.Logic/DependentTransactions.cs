@@ -8,7 +8,7 @@ namespace EmpDependents.Logic
 {
     public class DependentTransactions
     {
-        public async Task AddDependent(IAddCommandNoResult<Dependent> addEmployeeCommand, AddDependentModel dependentModel)
+        public async Task AddDependentAsync(IAddCommandNoResult<Dependent> addEmployeeCommand, AddDependentModel dependentModel)
         {
             //  todo: apply error checking before executing command
             var now = DateTime.Now;
@@ -26,7 +26,7 @@ namespace EmpDependents.Logic
             await addEmployeeCommand.ExecuteAsync(dependent);
         }
 
-        public async Task UpdateDependent(IUpdateCommandNoResult<Dependent> updateDependentCommand, IQuery<Dependent, Guid> getDependentQuery,
+        public async Task UpdateDependentAsync(IUpdateCommandNoResult<Dependent> updateDependentCommand, IQuery<Dependent, Guid> getDependentQuery,
                             UpdateDependentModel dependentModel)
         {
             var dependentToUpdate = await getDependentQuery.ExecuteQueryAsync(dependentModel.Id);

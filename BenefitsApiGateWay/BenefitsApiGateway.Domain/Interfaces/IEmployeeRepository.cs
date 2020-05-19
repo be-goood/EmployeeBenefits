@@ -7,5 +7,9 @@ namespace BenefitsApiGateway.Domain.Interfaces
     public interface IEmployeeRepository
     {
         Task<List<Employee>> GetAllEmployeesAsync();
+
+        Task AddEmployeesAsync(AddEmployeeModel newEmployee);
+
+        Task UpdateEmployeesAsync(UpdateEmplyoeeModel employeeToUpdate);
     }
 }

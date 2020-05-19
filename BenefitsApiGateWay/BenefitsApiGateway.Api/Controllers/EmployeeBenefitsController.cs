@@ -46,5 +46,69 @@ namespace BenefitsApiGateway.Api.Controllers
             return Ok(results);
         }
 
+        [HttpPost]
+        [Route("AddEmployee")]
+        public async Task<IActionResult> AddEmployee(AddEmployeeModel employee)
+        {
+            try
+            {
+                await new EmployeeOrchestration().AddEmployeeAsync(_employeeRepository, employee).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateEmployee")]
+        public async Task<IActionResult> UpdateEmployee(UpdateEmplyoeeModel employee)
+        {
+            try
+            {
+                await new EmployeeOrchestration().UpdateEmployeeAsync(_employeeRepository, employee).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("AddDependet")]
+        public async Task<IActionResult> AddDependet(AddDependentModel dependet)
+        {
+            try
+            {
+                await new DependentOrchestration().AddDependetAsync(_dependentRepository, dependet).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateDependet")]
+        public async Task<IActionResult> UpdateDependetAsync(UpdateDependentModel dependent)
+        {
+            try
+            {
+                await new DependentOrchestration().UpdateDependetAsync(_dependentRepository, dependent).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
     }
 }

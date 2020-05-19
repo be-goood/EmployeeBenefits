@@ -43,5 +43,43 @@ namespace BenefitsApiGateway.Services
                 throw;
             }
         }
+        public async Task AddDependentAsync(AddDependentModel newDependent)
+        {
+            try
+            {
+                var response = await _client.PostAsJsonAsync("api/Dependents/AddDependet", newDependent);
+                if (response.IsSuccessStatusCode)
+                {
+                }
+                else
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
+
+        public async Task UpdateDependentAsync(UpdateDependentModel dependentToUpdate)
+        {
+            try
+            {
+                var response = await _client.PutAsJsonAsync("api/Dependents/UpdateDependet", dependentToUpdate);
+                if (response.IsSuccessStatusCode)
+                {
+                }
+                else
+                {
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
+
     }
 }

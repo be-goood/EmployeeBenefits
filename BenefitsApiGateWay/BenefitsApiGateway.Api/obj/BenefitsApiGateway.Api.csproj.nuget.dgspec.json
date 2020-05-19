@@ -156,6 +156,9 @@
             "projectReferences": {
               "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsApiGateWay\\BenefitsApiGateway.Domain\\BenefitsApiGateway.Domain.csproj": {
                 "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsApiGateWay\\BenefitsApiGateway.Domain\\BenefitsApiGateway.Domain.csproj"
+              },
+              "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsApiGateWay\\BenefitsApiGateway.Services\\BenefitsApiGateway.Services.csproj": {
+                "projectPath": "C:\\PrototypeCode\\EmployeeBenefits\\BenefitsApiGateWay\\BenefitsApiGateway.Services\\BenefitsApiGateway.Services.csproj"
               }
             }
           }

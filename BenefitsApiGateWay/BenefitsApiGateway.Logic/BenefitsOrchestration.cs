@@ -9,10 +9,6 @@ namespace BenefitsApiGateway.Logic
     {
         public async Task<List<EmpDependetsBenefitDetails>> GetEmployeeWithCurrentSalaryAsync(IEmployeeRepository employeeRepository, IDependentRepository dependentRepository, IBenefitsRepository benefitsRepository)
         {
-            await Task.Run(() =>
-            {
-            });
-
             var employees = await employeeRepository.GetAllEmployeesAsync();
             var inputEmployees = await GetInputEmployees(employees, dependentRepository);
             var medBenefits = await benefitsRepository.GetEmployeeMedBenefitsAsync(inputEmployees);
@@ -20,7 +16,7 @@ namespace BenefitsApiGateway.Logic
             return medBenefits;
         }
 
-        public async Task<List<InputEmployee>> GetInputEmployees(List<Employee> employees, IDependentRepository dependentRepository)
+        private async Task<List<InputEmployee>> GetInputEmployees(List<Employee> employees, IDependentRepository dependentRepository)
         {
             var inputEmployees = new List<InputEmployee>();
             foreach (var employee in employees)
