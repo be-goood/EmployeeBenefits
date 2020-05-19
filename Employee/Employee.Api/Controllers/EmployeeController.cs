@@ -5,6 +5,7 @@ using EmpDependents.Domain.Interfaces;
 using Employee.Domain.Configuration;
 using Employee.Domain.Entities;
 using Employee.Domain.Interfaces;
+using Employee.Domain.Models;
 using Employee.Logic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
@@ -18,11 +19,11 @@ namespace Employee.Api.Controllers
         private ApiSettings _settings;
         private IQuery<EmployeeEntity, Guid> _getEmployeeAndCurrentSalaryQuery;
         private IQueryNoParam<List<EmployeeEntity>> _getAllEmployeesAndSalariesQuery;
-        private ICommandNoResult<EmployeeEntity> _addEmployeeCommand;
-        private ICommandNoResult<EmployeeEntity> _updateEmployeeCommand;
+        private IAddCommandNoResult<EmployeeEntity> _addEmployeeCommand;
+        private IUpdateCommandNoResult<EmployeeEntity> _updateEmployeeCommand;
 
         public EmployeeController(IOptionsMonitor<ApiSettings> settings, IQuery<EmployeeEntity, Guid> getEmployeeAndCurrentSalaryQuery, IQueryNoParam<List<EmployeeEntity>> getAllEmployeesAndSalariesQuery,
-            ICommandNoResult<EmployeeEntity> addEmployeeCommand, ICommandNoResult<EmployeeEntity> updateEmployeeCommand)
+            IAddCommandNoResult<EmployeeEntity> addEmployeeCommand, IUpdateCommandNoResult<EmployeeEntity> updateEmployeeCommand)
         {
             _settings = settings.CurrentValue;
             _getEmployeeAndCurrentSalaryQuery = getEmployeeAndCurrentSalaryQuery;
@@ -69,6 +70,38 @@ namespace Employee.Api.Controllers
             }
 
             return Ok(results);
+        }
+
+        [HttpPost]
+        [Route("AddEmployee")]
+        public async Task<IActionResult> AddEmployee(AddEmployeeModel employee)
+        {
+            try
+            {
+                await new EmployeeTransactions().AddEmployee(_addEmployeeCommand, employee).ConfigureAwait(false); 
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
+        }
+
+        [HttpPut]
+        [Route("UpdateEmployee")]
+        public async Task<IActionResult> UpdateEmployee(UpdateEmplyoeeModel employee)
+        {
+            try
+            {
+                await new EmployeeTransactions().UpdateEmployee(_updateEmployeeCommand, _getEmployeeAndCurrentSalaryQuery, employee).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok();
         }
     }
 }

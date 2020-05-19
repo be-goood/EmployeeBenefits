@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace EmpDependents.Sql.Commands
 {
-    public  class AddEmployeeCommand : ICommandNoResult<EmployeeEntity>
+    public  class AddEmployeeCommand : IAddCommandNoResult<EmployeeEntity>
     {
         private readonly string _connectionString;
         public AddEmployeeCommand(string connectionString)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmpDependents.Sql.Commands
 {
-    public  class UpdateEmployeeCommand : ICommandNoResult<EmployeeEntity>
+    public  class UpdateEmployeeCommand : IUpdateCommandNoResult<EmployeeEntity>
     {
         private readonly string _connectionString;
         public UpdateEmployeeCommand(string connectionString)
@@ -18,7 +18,7 @@ namespace EmpDependents.Sql.Commands
         {
             using (var dbContext = new EmployeeDb(_connectionString))
             {
-                var model = await dbContext.Employee.AddAsync(employee);
+                //var model = await dbContext.Employee.AddAsync(employee);
                 dbContext.Entry(employee).State = EntityState.Modified;
                 await dbContext.SaveChangesAsync();
             }

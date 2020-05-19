@@ -34,8 +34,8 @@ namespace Employee.Api
             services.AddSingleton(_apiSettings);
             services.AddScoped<IQuery<EmployeeEntity, Guid>>(_ => new GetEmployeeAndSalaryQuery(_apiSettings.ConnectionString));
             services.AddScoped<IQueryNoParam<List<EmployeeEntity>>>(_ => new GetAllEmployeesAndSalariesQuery(_apiSettings.ConnectionString));
-            services.AddScoped<ICommandNoResult<EmployeeEntity>>(_ => new AddEmployeeCommand(_apiSettings.ConnectionString));
-            services.AddScoped<ICommandNoResult<EmployeeEntity>>(_ => new UpdateEmployeeCommand(_apiSettings.ConnectionString));
+            services.AddScoped<IAddCommandNoResult<EmployeeEntity>>(_ => new AddEmployeeCommand(_apiSettings.ConnectionString));
+            services.AddScoped<IUpdateCommandNoResult<EmployeeEntity>>(_ => new UpdateEmployeeCommand(_apiSettings.ConnectionString));
 
             services.AddControllers();
 

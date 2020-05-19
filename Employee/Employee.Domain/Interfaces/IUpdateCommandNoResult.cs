@@ -2,7 +2,7 @@
 
 namespace EmpDependents.Domain.Interfaces
 {
-    public interface ICommandNoResult<TParam>
+    public interface IUpdateCommandNoResult<TParam>
     {
         Task ExecuteAsync(TParam param);
     }
