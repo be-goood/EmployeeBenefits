@@ -27,6 +27,26 @@ namespace BenefitsApiGateway.Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetDependent")]
+        [ProducesResponseType(typeof(Dependent), 200)]
+        [ProducesResponseType(typeof(void), 500)]
+        public async Task<IActionResult> GetDependent(Guid dependentId)
+        {
+            Dependent dependentDetails;
+
+            try
+            {
+                dependentDetails = await new DependentOrchestration().GetDependentAsync(_dependentRepository, dependentId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok(dependentDetails);
+        }
+
+        [HttpGet]
         [Route("GetEmployeesWithDependents")]
         [ProducesResponseType(typeof(Employee), 200)]
         [ProducesResponseType(typeof(void), 500)]

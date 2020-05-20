@@ -31,9 +31,30 @@ namespace EmpDependents.Controllers
         }
 
         [HttpGet]
+        [Route("GetDependent")]
+        [ProducesResponseType(typeof(Dependent), 200)]
+        [ProducesResponseType(typeof(void), 500)]
+        public async Task<IActionResult> GetDependent(Guid dependentId)
+        {
+            Dependent model;
+
+            try
+            {
+                model = await _getEmployeeDependentQuery.ExecuteQueryAsync(dependentId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        [Route("GetEmployeeDependents")]
         [ProducesResponseType(typeof(List<Dependent>), 200)]
         [ProducesResponseType(typeof(void), 500)]
-        public async Task<IActionResult> GetEmployee(Guid employeeId)
+        public async Task<IActionResult> GetEmployeeDependents(Guid employeeId)
         {
             List<Dependent> model;
 

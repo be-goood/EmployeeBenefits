@@ -20,11 +20,35 @@ namespace BenefitsApiGateway.Services
             _client = client;
         }
 
+        public async Task<Dependent> GetDependentAsync(Guid dependentId)
+        {
+            try
+            {
+                var response = await _client.GetAsync($"api/Dependents/GetDependent?dependentId={dependentId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<Dependent>();
+                    return data;
+                }
+                else
+                {
+                    // add log
+                    // wrap response in a generic service response
+                    return new Dependent();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
+
         public async Task<List<Dependent>> GetAllEmployeeDependentsAsync(Guid emploeeId)
         {
             try
             {
-                var response = await _client.GetAsync($"api/Dependents?employeeId={emploeeId}");
+                var response = await _client.GetAsync($"api/Dependents/GetEmployeeDependents?employeeId={emploeeId}");
                 if (response.IsSuccessStatusCode)
                 {
                     var data = await response.Content.ReadAsAsync<List<Dependent>>();
@@ -43,6 +67,7 @@ namespace BenefitsApiGateway.Services
                 throw;
             }
         }
+
         public async Task AddDependentAsync(AddDependentModel newDependent)
         {
             try

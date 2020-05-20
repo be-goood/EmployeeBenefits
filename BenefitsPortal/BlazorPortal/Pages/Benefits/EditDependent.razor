@@ -3,6 +3,7 @@
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
+@inject IDependentRepository dependentRepository
 @inject NavigationManager navigation
 
 <h1>Dependent Details</h1>
@@ -16,7 +17,7 @@ else
 {
     <div class="col-12">
         <hr />
-        <EditForm Model="@dependent" OnValidSubmit="@UpdateDependent">
+        <EditForm Model="@dependent">
             @*<DataAnnotationsValidator />*@
 
             <div class="col-12 row">
@@ -45,27 +46,35 @@ else
 }
 
 @code {
-    [Parameter]
-    public string dependentId { get; set; }
+        [Parameter]
+        public string dependentId { get; set; }
 
-    private Dependent dependent;
-    ElementReference publisherNameTextBox;
+        private Dependent dependent;
+        ElementReference publisherNameTextBox;
 
 
-    protected override async Task OnInitializedAsync()
-    {
-        await Task.Run(() =>
+        protected override async Task OnInitializedAsync()
         {
-            dependent = new Dependent() { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(dependentId), FirstName = "Faith", LastName = "Velazquez" };
-        });
-        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
-    }
+            //await Task.Run(() =>
+            //{
+            //    dependent = new Dependent() { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(dependentId), FirstName = "Faith", LastName = "Velazquez" };
+            //});
+            //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
+            dependent = await dependentRepository.GetDependentAsync(Guid.Parse(dependentId));
+        }
 
-    private async Task UpdateDependent()
-    {
-        await Task.Run(() =>
+        private async Task UpdateDependent()
         {
-        });
+            var updateDependentModel = new UpdateDependentModel()
+            {
+                Id = dependent.Id,
+                FirstName = dependent.FirstName,
+                LastName = dependent.LastName,
+                Ssn = "123-45-6789",
+                Dob = new DateTime(2010,1,1)
+            };
+        await dependentRepository.UpdateDependentAsync(updateDependentModel);
+        navigation.NavigateTo("/benefits/Benefit");
     }
 
     private async Task DeleteDependent()

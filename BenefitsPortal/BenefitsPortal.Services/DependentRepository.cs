@@ -19,6 +19,30 @@ namespace BenefitsPortal.Services
             _client = client;
         }
 
+        public async Task<Dependent> GetDependentAsync(Guid dependentId)
+        {
+            try
+            {
+                var response = await _client.GetAsync($"api/EmployeeBenefits/GetDependent?dependentId={dependentId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<Dependent>();
+                    return data;
+                }
+                else
+                {
+                    // add log
+                    // wrap response in a generic service response
+                    return new Dependent();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+        }
+
         public async Task AddDependentAsync(AddDependentModel newDependent)
         {
             try
