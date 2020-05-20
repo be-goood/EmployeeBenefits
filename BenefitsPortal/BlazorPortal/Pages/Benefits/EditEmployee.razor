@@ -18,7 +18,7 @@ else
     <div class="col-12">
         <hr />
         <p>
-            <a href="/benefits/dependent/add">New Dependent</a>
+            <a href="/benefits/dependent/add/@empId">New Dependent</a>
         </p>
 
         <EditForm Model="@employee" OnValidSubmit="@UpdateEmployee">
@@ -26,14 +26,14 @@ else
 
             <div class="col-12 row">
                 <label class="col-2 font-weight-bold">First name :</label>
-                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.FirstName" placeholder="First name" />
-                &nbsp;<ValidationMessage For="@(() => employee.FirstName)" />
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employeeToUpdate.FirstName" placeholder="First name" />
+                &nbsp;<ValidationMessage For="@(() => employeeToUpdate.FirstName)" />
             </div>
             <br />
             <div class="col-12 row">
                 <label class="col-2 font-weight-bold">Last name :</label>
-                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.LastName" placeholder="Last name" />
-                &nbsp;<ValidationMessage For="@(() => employee.LastName)" />
+                <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employeeToUpdate.LastName" placeholder="Last name" />
+                &nbsp;<ValidationMessage For="@(() => employeeToUpdate.LastName)" />
             </div>
             <br />
             <div class="col-12 row">
@@ -76,13 +76,16 @@ else
     private List<Dependent> dependents;
     private Employee employee;
     private Dependent dependent;
+    UpdateEmplyoeeModel employeeToUpdate = new UpdateEmplyoeeModel();
     ElementReference publisherNameTextBox;
 
 
     protected override async Task OnInitializedAsync()
     {
         employee = await employeeRepository.GetEmployeeWithDependentsAsync(Guid.Parse(empId));
-        var test = 1;
+        employeeToUpdate.Id = employee.Id;
+        employeeToUpdate.FirstName = employee.FirstName;
+        employeeToUpdate.LastName = employee.LastName;
         //GetEmployeeWithDependentsAsync(Guid employeeId)
         //await Task.Run(() =>
         //{
@@ -98,9 +101,8 @@ else
 
     private async Task UpdateEmployee()
     {
-        await Task.Run(() =>
-        {
-        });
+        await employeeRepository.UpdateEmployeesAsync(employeeToUpdate);
+        navigation.NavigateTo("/benefits/Benefit");
     }
 
     private async Task DeleteEmployee()

@@ -1,13 +1,36 @@
-﻿@page "/benefits/dependent/add"
+﻿@page "/benefits/dependent/add/{employeeId}"
 
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
+@inject IDependentRepository dependentRepository
 @inject NavigationManager navigation
 
 <h1>Add New Dependent</h1>
 
-<div class="row">
+<EditForm Model="@dependent" OnValidSubmit="@Add">
+    @*<DataAnnotationsValidator />*@
+
+    <div class="col-12 row">
+        <label class="col-2 font-weight-bold">First name :</label>
+        <input @ref="publisherNameTextBox" class="form-control col-3" @bind="dependent.FirstName" placeholder="First name" />
+        &nbsp;<ValidationMessage For="@(() => dependent.FirstName)" />
+    </div>
+    <br />
+    <div class="col-12 row">
+        <label class="col-2 font-weight-bold">Last name :</label>
+        <input @ref="publisherNameTextBox" class="form-control col-3" @bind="dependent.LastName" placeholder="Last name" />
+        &nbsp;<ValidationMessage For="@(() => dependent.LastName)" />
+    </div>
+    <br />
+    <div class="col-12 row">
+        <span class="col-2"></span>
+        <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await Add())">Add</button>
+    </div>
+
+</EditForm>
+
+@*<div class="row">
     <div class="col-md-4">
         <form>
             <div class="form-group">
@@ -24,11 +47,13 @@
             </div>
         </form>
     </div>
-</div>
+</div>*@
 <br />
 
 @code {
-    private Dependent dependent = new Dependent();
+    [Parameter]
+    public string employeeId { get; set; }
+    private AddDependentModel dependent = new AddDependentModel();
     ElementReference publisherNameTextBox;
 
 
@@ -42,9 +67,11 @@
 
     private async Task Add()
     {
-        await Task.Run(() =>
-        {
-        });
+        dependent.EmployeeId = Guid.Parse(employeeId);
+        dependent.Ssn = "123-45-6789";
+        dependent.Dob = new DateTime(2010, 1, 1);
+        await dependentRepository.AddDependentAsync(dependent);
+        navigation.NavigateTo("/benefits/Benefit", true);
     }
 
     private async Task Cancel()
