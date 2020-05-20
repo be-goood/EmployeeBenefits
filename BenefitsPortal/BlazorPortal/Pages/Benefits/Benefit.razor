@@ -3,6 +3,7 @@
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
+@inject IEmployeeRepository employeeRepository
 
 <h1>Overview of employee benefits</h1>
 
@@ -16,14 +17,14 @@
 
         <div class="col-12 row">
             <label class="col-2 font-weight-bold">First name :</label>
-            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.EmployeeName" placeholder="First name" />
-            &nbsp;<ValidationMessage For="@(() => employee.EmployeeName)" />
+            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.FirstName" placeholder="First name" />
+            &nbsp;<ValidationMessage For="@(() => employee.FirstName)" />
         </div>
         <br />
         <div class="col-12 row">
             <label class="col-2 font-weight-bold">Last name :</label>
-            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.EmployeeName" placeholder="Last name" />
-            &nbsp;<ValidationMessage For="@(() => employee.EmployeeName)" />
+            <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.LastName" placeholder="Last name" />
+            &nbsp;<ValidationMessage For="@(() => employee.LastName)" />
         </div>
         <br />
         <div class="col-12 row">
@@ -73,7 +74,7 @@ else
 
 @code {
     private List<MedicalBenefit> eMedBenefits;
-    private MedicalBenefit employee = new MedicalBenefit();
+    private AddEmployeeModel employee = new AddEmployeeModel();
     ElementReference publisherNameTextBox;
 
     protected override async Task OnInitializedAsync()
@@ -84,8 +85,7 @@ else
 
     private async Task CreateEmployee()
     {
-        await Task.Run(() =>
-        {
-        });
+        await employeeRepository.AddEmployeesAsync(employee);
+        eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsAsync();
     }
 }

@@ -36,7 +36,8 @@ namespace BlazorPortal
             services.AddSingleton<WeatherForecastService>();
             //services.AddSingleton<EmployeeBenefitsService>();
             services.AddTransient<IEBenefitsRepository>(_ => new EBenefitsRepository(new HttpClient(), _appSettings.ApiGatewayUri));
-            //services.AddTransient<IBenefitsRepository>(_ => new BenefitsRepository(new HttpClient(), _apiSettings.MedicalBenefitsApiUri));
+            services.AddTransient<IEmployeeRepository>(_ => new EmployeeRepository(new HttpClient(), _appSettings.ApiGatewayUri));
+            services.AddTransient<IDependentRepository>(_ => new DependentRepository(new HttpClient(), _appSettings.ApiGatewayUri));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

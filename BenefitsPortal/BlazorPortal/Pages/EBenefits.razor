@@ -50,10 +50,10 @@ else
 }
 
 @code {
-    private List<MedicalBenefit> employeeBenefits;
+    private List<EmployeeBenefits> employeeBenefits;
 
     protected override async Task OnInitializedAsync()
     {
-        employeeBenefits = await eBenefitsRepository.GetEmployeeBenefitstAsync();
+        employeeBenefits = await eBenefitsRepository.GetEmployeeBenefitsTestAsync();
     }
 }
