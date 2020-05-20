@@ -29,79 +29,27 @@ namespace BenefitsPortal.Services
         public async Task<List<EmployeeBenefits>> GetEmployeeBenefitstAsync()
         {
             return await GetEmployeeBenefitsTestAsync();
-            //try
-            //{
-            //    var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
-            //    if (response.IsSuccessStatusCode)
-            //    {
-            //        var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
-            //        return MapResults(data);
-            //    }
-            //    else
-            //    {
-            //        // add log
-            //        // wrap response in a generic service response
-            //        return new List<EmployeeBenefits>();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    // add log
-            //    throw;
-            //}
-        }
-
-        private List<EmployeeBenefits> MapResults(List<EmpDependetsBenefitDetails> data)
-        {
-            var rng = new Random();
-            var results = new List<EmployeeBenefits>();
-            foreach(var item in data)
-            {
-                var temp = new EmployeeBenefits();
-                temp.EmployeeName = item.Name;
-                temp.BenefitPlan = Providers[rng.Next(Providers.Length)];
-                temp.CoverageBeginDate = DateTime.Now;
-                temp.DeducationBeginDate = DateTime.Now;
-                temp.Coverage = "Family";
-                temp.CalculatedCoverage = 1000m;
-                //temp.Dependents = item.Dependents.Select(s => s.Name).ToList();
-                var dNames = item.Dependents.Select(s => s.Name).ToList();
-                temp.Dependents = string.Join("   ",dNames);
-                temp.Beneficiaries = "";
-                temp.SemiMonthlyEmployeeCost = item.TotalBenefitsCost;
-                temp.SemiMonthlyEmployerContributions = item.TotalBenefitsDiscount;
-
-                results.Add(temp);
-            }
-            return results;
         }
 
         public async Task<List<MedicalBenefit>> GetEmployeeMedBenefitsAsync()
         {
-            try
+            var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
+            if (response.IsSuccessStatusCode)
             {
-                var response = await _client.GetAsync("api/EmployeeBenefits/GetAllEmployees");
-                if (response.IsSuccessStatusCode)
-                {
-                    var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
-                    return MapBenefitResults(data);
-                }
-                else
-                {
-                    // add log
-                    // wrap response in a generic service response
-                    return new List<MedicalBenefit>();
-                }
+                var data = await response.Content.ReadAsAsync<List<EmpDependetsBenefitDetails>>();
+                return MapBenefitResults(data);
             }
-            catch (Exception ex)
+            else
             {
                 // add log
-                throw;
+                // wrap response in a generic service response
+                return new List<MedicalBenefit>();
             }
         }
 
         private List<MedicalBenefit> MapBenefitResults(List<EmpDependetsBenefitDetails> data)
         {
+            // todo replace with auto-mapper
             var rng = new Random();
             var results = new List<MedicalBenefit>();
             foreach (var item in data)
@@ -120,38 +68,22 @@ namespace BenefitsPortal.Services
             return results;
         }
 
-        public Task<List<MedicalBenefit>> GetEmployeeMedBenefitsTestAsync()
+        public Task<List<EmployeeBenefits>> GetEmployeeBenefitsTestAsync()
         {
             var rng = new Random();
-            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new MedicalBenefit
+            return Task.FromResult(Enumerable.Range(1, 5).Select(index => new EmployeeBenefits
             {
-                EmployeeId = Guid.NewGuid(),
                 EmployeeName = "Jorge Velazquez",
-                Dependents = "Ivy Velazquez, Daphne Velazquez",
-                BaseEmployeeCost = 100m,
-                EmployeeDiscountAmount = 700m,
-                TotalEmployeeCost = 700m,
-            }).ToList());
+                BenefitPlan = Providers[rng.Next(Providers.Length)],
+                CoverageBeginDate = DateTime.Now,
+                DeducationBeginDate = DateTime.Now,
+                Coverage = "Family",
+                CalculatedCoverage = 1000m,
+                Dependents = "Ivy Velazquez   Daphne Velazquez",
+                Beneficiaries = "Heather Velazquez",
+                SemiMonthlyEmployeeCost = 100m,
+                SemiMonthlyEmployerContributions = 700m,
+            }).ToList()); ;
         }
-
-        public Task<List<EmployeeBenefits>> GetEmployeeBenefitsTestAsync()
-            {
-                var rng = new Random();
-                return Task.FromResult(Enumerable.Range(1, 5).Select(index => new EmployeeBenefits
-                {
-                    EmployeeName = "Jorge Velazquez",
-                    BenefitPlan = Providers[rng.Next(Providers.Length)],
-                    CoverageBeginDate = DateTime.Now,
-                    DeducationBeginDate = DateTime.Now,
-                    Coverage = "Family",
-                    CalculatedCoverage = 1000m,
-                    //Dependents = new List<string>() { "Ivy Velazquez", "Daphne Velazquez" },
-                    Dependents = "Ivy Velazquez   Daphne Velazquez",
-                    Beneficiaries = "Heather Velazquez",
-                    SemiMonthlyEmployeeCost = 100m,
-                    SemiMonthlyEmployerContributions = 700m,
-                }).ToList()); ;
-            }
-
     }
 }
