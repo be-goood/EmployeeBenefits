@@ -10,11 +10,17 @@ namespace Employee.Logic
 {
     public class EmployeeTransactions
     {
-        public async Task<EmployeeEntity> GetEmployeeWithCurrentSalaryAsync(IQuery<EmployeeEntity, Guid> getEmployeeAndSalaryQuery, Guid employeeId)
+        public async Task<EmployNoSalaryModel> GetEmployeeWithCurrentSalaryAsync(IQuery<EmployeeEntity, Guid> getEmployeeAndSalaryQuery, Guid employeeId)
         {
             var employee = await getEmployeeAndSalaryQuery.ExecuteQueryAsync(employeeId);
-            employee.Salary.RemoveAll(r => r.EndDate != null);
-            return employee;
+            var employeeNoSalaryModel = new EmployNoSalaryModel()
+            {
+                Id = employee.Id,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName
+            };
+            
+            return employeeNoSalaryModel;
         }
 
         public async Task<List<EmployeeEntity>> GetAllEmployeesWithCurrentSalariesAsync(IQueryNoParam<List<EmployeeEntity>> getAllEmployeesAndSalariesQuery)

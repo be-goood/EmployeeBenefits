@@ -19,6 +19,29 @@ namespace BenefitsPortal.Services
             _client = client;
         }
 
+        public async Task<Employee> GetEmployeeWithDependentsAsync(Guid employeeId)
+        {
+            Employee employee;
+            try
+            {
+                var response = await _client.GetAsync($"api/EmployeeBenefits/GetEmployeesWithDependents?employeeId={employeeId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    employee = await response.Content.ReadAsAsync<Employee>();
+                }
+                else
+                {
+                    return new Employee();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+            return employee;
+        }
+
         public async Task AddEmployeesAsync(AddEmployeeModel newEmployee)
         {
             try
@@ -26,6 +49,7 @@ namespace BenefitsPortal.Services
                 var response = await _client.PostAsJsonAsync("api/EmployeeBenefits/AddEmployee", newEmployee);
                 if (response.IsSuccessStatusCode)
                 {
+
                 }
                 else
                 {

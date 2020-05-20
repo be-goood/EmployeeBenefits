@@ -3,6 +3,7 @@
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
 @inject IEBenefitsRepository eBenefitsRepository
+@inject IEmployeeRepository employeeRepository
 @inject NavigationManager navigation
 
 <h1>Employee Details</h1>
@@ -80,15 +81,18 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        await Task.Run(() =>
-        {
-            employee = new Employee() { Id = Guid.Parse(empId), FirstName = "Jorge", LastName = "Velazquez" };
-            employee.Dependents = new List<Dependent>()
-            {
-                new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Faith", LastName = "Velazquez" },
-                new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Ariel", LastName = "Velazquez" },
-                };
-        });
+        employee = await employeeRepository.GetEmployeeWithDependentsAsync(Guid.Parse(empId));
+        var test = 1;
+        //GetEmployeeWithDependentsAsync(Guid employeeId)
+        //await Task.Run(() =>
+        //{
+        //    employee = new Employee() { Id = Guid.Parse(empId), FirstName = "Jorge", LastName = "Velazquez" };
+        //    employee.Dependents = new List<Dependent>()
+        //{
+        //        new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Faith", LastName = "Velazquez" },
+        //        new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Ariel", LastName = "Velazquez" },
+        //        };
+        //});
         //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
     }
 

@@ -1,5 +1,6 @@
 ﻿using BenefitsApiGateway.Domain.Interfaces;
 using BenefitsApiGateway.Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -7,6 +8,14 @@ namespace BenefitsApiGateway.Logic
 {
     public class BenefitsOrchestration
     {
+        public async Task<Employee> GetEmployeeWithDependentsAsync(IEmployeeRepository employeeRepository, IDependentRepository dependentRepository, Guid employeeId)
+        {
+            var employee = await employeeRepository.GetEmployeeWithDependentsAsync(employeeId);
+            employee.Dependents = await dependentRepository.GetAllEmployeeDependentsAsync(employeeId);
+
+            return employee;
+        }
+
         public async Task<List<EmpDependetsBenefitDetails>> GetEmployeeWithCurrentSalaryAsync(IEmployeeRepository employeeRepository, IDependentRepository dependentRepository, IBenefitsRepository benefitsRepository)
         {
             var employees = await employeeRepository.GetAllEmployeesAsync();
@@ -15,6 +24,7 @@ namespace BenefitsApiGateway.Logic
 
             return medBenefits;
         }
+
 
         private async Task<List<InputEmployee>> GetInputEmployees(List<Employee> employees, IDependentRepository dependentRepository)
         {

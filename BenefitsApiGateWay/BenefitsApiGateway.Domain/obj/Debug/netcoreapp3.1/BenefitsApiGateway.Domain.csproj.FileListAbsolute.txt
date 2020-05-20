@@ -6,3 +6,4 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Domain\o
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Domain\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.AssemblyInfo.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Domain\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.dll
 C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Domain\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.pdb
+C:\PrototypeCode\EmployeeBenefits\BenefitsApiGateWay\BenefitsApiGateway.Domain\obj\Debug\netcoreapp3.1\BenefitsApiGateway.Domain.csprojAssemblyReference.cache

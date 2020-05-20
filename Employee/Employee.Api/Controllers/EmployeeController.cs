@@ -34,11 +34,11 @@ namespace Employee.Api.Controllers
 
         [HttpGet]
         [Route("GetEmployee")]
-        [ProducesResponseType(typeof(EmployeeEntity), 200)]
+        [ProducesResponseType(typeof(EmployNoSalaryModel), 200)]
         [ProducesResponseType(typeof(void), 500)]
         public async Task<IActionResult> GetEmployee(Guid employeeId)
         {
-            EmployeeEntity model;
+            EmployNoSalaryModel model;
 
             try
             {

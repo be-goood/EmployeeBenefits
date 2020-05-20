@@ -27,6 +27,26 @@ namespace BenefitsApiGateway.Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetEmployeesWithDependents")]
+        [ProducesResponseType(typeof(Employee), 200)]
+        [ProducesResponseType(typeof(void), 500)]
+        public async Task<IActionResult> GetEmployeesWithDependents(Guid employeeId)
+        {
+            Employee employeeDetails;
+
+            try
+            {
+                employeeDetails = await new BenefitsOrchestration().GetEmployeeWithDependentsAsync(_employeeRepository, _dependentRepository, employeeId);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok(employeeDetails);
+        }
+
+        [HttpGet]
         [Route("GetAllEmployees")]
         [ProducesResponseType(typeof(List<EmpDependetsBenefitDetails>), 200)]
         [ProducesResponseType(typeof(void), 500)]

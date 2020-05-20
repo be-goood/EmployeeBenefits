@@ -20,6 +20,31 @@ namespace BenefitsApiGateway.Services
             _client = client;
         }
 
+        public async Task<Employee> GetEmployeeWithDependentsAsync(Guid employeeId)
+        {
+            try
+            {
+                var response = await _client.GetAsync($"api/Employee/GetEmployee?employeeId={employeeId}");
+                if (response.IsSuccessStatusCode)
+                {
+                    var data = await response.Content.ReadAsAsync<Employee>();
+                    return data;
+                }
+                else
+                {
+                    // add log
+                    // wrap response in a generic service response
+                    return new Employee();
+                }
+            }
+            catch (Exception ex)
+            {
+                // add log
+                throw;
+            }
+
+        }
+
         public async Task<List<Employee>> GetAllEmployeesAsync()
         {
             var response = await _client.GetAsync("api/Employee/GetAllEmployees");
