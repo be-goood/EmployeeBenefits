@@ -21,63 +21,34 @@ namespace BenefitsPortal.Services
 
         public async Task<Employee> GetEmployeeWithDependentsAsync(Guid employeeId)
         {
-            Employee employee;
-            try
+            Employee employee = new Employee(); 
+            var response = await _client.GetAsync($"api/EmployeeBenefits/GetEmployeesWithDependents?employeeId={employeeId}");
+            if (response.IsSuccessStatusCode)
             {
-                var response = await _client.GetAsync($"api/EmployeeBenefits/GetEmployeesWithDependents?employeeId={employeeId}");
-                if (response.IsSuccessStatusCode)
-                {
-                    employee = await response.Content.ReadAsAsync<Employee>();
-                }
-                else
-                {
-                    return new Employee();
-                }
+                employee = await response.Content.ReadAsAsync<Employee>();
             }
-            catch (Exception ex)
+            else
             {
-                // add log
-                throw;
+                //todo: log errors
             }
             return employee;
         }
 
         public async Task AddEmployeesAsync(AddEmployeeModel newEmployee)
         {
-            try
+            var response = await _client.PostAsJsonAsync("api/EmployeeBenefits/AddEmployee", newEmployee);
+            if (!response.IsSuccessStatusCode)
             {
-                var response = await _client.PostAsJsonAsync("api/EmployeeBenefits/AddEmployee", newEmployee);
-                if (response.IsSuccessStatusCode)
-                {
-
-                }
-                else
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                // add log
-                throw;
+                //todo: log errors
             }
         }
 
         public async Task UpdateEmployeesAsync(UpdateEmplyoeeModel employeeToUpdate)
         {
-            try
+            var response = await _client.PutAsJsonAsync("api/EmployeeBenefits/UpdateEmployee", employeeToUpdate);
+            if (!response.IsSuccessStatusCode)
             {
-                var response = await _client.PutAsJsonAsync("api/EmployeeBenefits/UpdateEmployee", employeeToUpdate);
-                if (response.IsSuccessStatusCode)
-                {
-                }
-                else
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                // add log
-                throw;
+                //todo: log errors
             }
         }
     }

@@ -21,63 +21,35 @@ namespace BenefitsPortal.Services
 
         public async Task<Dependent> GetDependentAsync(Guid dependentId)
         {
-            try
+            var response = await _client.GetAsync($"api/EmployeeBenefits/GetDependent?dependentId={dependentId}");
+            if (response.IsSuccessStatusCode)
             {
-                var response = await _client.GetAsync($"api/EmployeeBenefits/GetDependent?dependentId={dependentId}");
-                if (response.IsSuccessStatusCode)
-                {
-                    var data = await response.Content.ReadAsAsync<Dependent>();
-                    return data;
-                }
-                else
-                {
-                    // add log
-                    // wrap response in a generic service response
-                    return new Dependent();
-                }
+                var data = await response.Content.ReadAsAsync<Dependent>();
+                return data;
             }
-            catch (Exception ex)
+            else
             {
                 // add log
-                throw;
+                // wrap response in a generic service response
+                return new Dependent();
             }
         }
 
         public async Task AddDependentAsync(AddDependentModel newDependent)
         {
-            try
+            var response = await _client.PostAsJsonAsync("api/EmployeeBenefits/AddDependet", newDependent);
+            if (!response.IsSuccessStatusCode)
             {
-                var response = await _client.PostAsJsonAsync("api/EmployeeBenefits/AddDependet", newDependent);
-                if (response.IsSuccessStatusCode)
-                {
-                }
-                else
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                // add log
-                throw;
+                //todo: log errors
             }
         }
 
         public async Task UpdateDependentAsync(UpdateDependentModel dependentToUpdate)
         {
-            try
+            var response = await _client.PutAsJsonAsync("api/EmployeeBenefits/UpdateDependet", dependentToUpdate);
+            if (!response.IsSuccessStatusCode)
             {
-                var response = await _client.PutAsJsonAsync("api/EmployeeBenefits/UpdateDependet", dependentToUpdate);
-                if (response.IsSuccessStatusCode)
-                {
-                }
-                else
-                {
-                }
-            }
-            catch (Exception ex)
-            {
-                // add log
-                throw;
+                //todo: log errors
             }
         }
 
