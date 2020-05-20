@@ -2,7 +2,6 @@
 using EmpDependents.Domain.Interfaces;
 using EmpDependents.Sql.Context;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Threading.Tasks;
 
 namespace EmpDependents.Sql.Commands
@@ -17,18 +16,11 @@ namespace EmpDependents.Sql.Commands
 
         public async Task ExecuteAsync(Dependent dependent)
         {
-            try
+            using (var dbContext = new DependentDb(_connectionString))
             {
-                using (var dbContext = new DependentDb(_connectionString))
-                {
-                    //var model = await dbContext.Dependent.AddAsync(dependent);
-                    dbContext.Entry(dependent).State = EntityState.Modified;
-                    await dbContext.SaveChangesAsync();
-                }
-            }
-            catch (Exception ex)
-            {
-                throw;
+                //var model = await dbContext.Dependent.AddAsync(dependent);
+                dbContext.Entry(dependent).State = EntityState.Modified;
+                await dbContext.SaveChangesAsync();
             }
         }
     }
