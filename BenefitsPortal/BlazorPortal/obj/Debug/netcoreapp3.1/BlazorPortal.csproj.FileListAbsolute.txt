@@ -7,10 +7,8 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcorea
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Benefits\Benefit.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Benefits\EditDependent.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Benefits\EditEmployee.razor.g.cs
-C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Counter.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\EBenefits.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Error.razor.g.cs
-C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Pages\Index.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\MainLayout.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\RazorDeclaration\Shared\NavMenu.razor.g.cs
@@ -25,10 +23,8 @@ C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcorea
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Benefits\Benefit.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Benefits\EditDependent.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Benefits\EditEmployee.razor.g.cs
-C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Counter.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\EBenefits.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Error.razor.g.cs
-C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\FetchData.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Pages\Index.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Shared\MainLayout.razor.g.cs
 C:\PrototypeCode\EmployeeBenefits\BenefitsPortal\BlazorPortal\obj\Debug\netcoreapp3.1\Razor\Shared\NavMenu.razor.g.cs
