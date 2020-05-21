@@ -59,7 +59,6 @@ namespace MedicalBenefits.Api
 
             app.UseEndpoints(endpoints =>
             {
-                //http://localhost:57674/swagger/index.html
                 endpoints.MapControllers();
             });
         }
