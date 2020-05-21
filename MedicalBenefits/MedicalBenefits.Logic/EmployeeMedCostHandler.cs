@@ -47,6 +47,7 @@ namespace MedicalBenefits.Logic
                     employee.TotalBenefitsCost += dependent.BenefitsCost - dependent.BenefitDiscount;
                     employee.TotalBenefitsDiscount += dependent.BenefitDiscount;
                 }
+                employee.PaycheckDeduction = employee.TotalBenefitsCost / 26;
             }
         }
 

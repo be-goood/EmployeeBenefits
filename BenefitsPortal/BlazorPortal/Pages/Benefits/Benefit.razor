@@ -49,25 +49,27 @@ else
             <tr>
                 <th>Employee Name</th>
                 <th>Dependents</th>
-                <th>Base Employee Cost</th>
-                <th>Employee Discount Amount</th>
-                <th>Total Employee Cost</th>
+                <th>Yearly Base Employee Cost</th>
+                <th>Yearly Employee Discount Amount</th>
+                <th>Yearly Total Employee Cost</th>
+                <th>Paycheck deduction</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var eb in eMedBenefits)
             {
-                <tr>
-                    <td>@eb.EmployeeName</td>
-                    <td>@eb.Dependents</td>
-                    <td>$@string.Format("{0:0.00}", eb.BaseEmployeeCost)</td>
-                    <td>$@string.Format("{0:0.00}", eb.EmployeeDiscountAmount)</td>
-                    <td>$@string.Format("{0:0.00}", eb.TotalEmployeeCost)</td>
-                    <td>
-                        <a href='/benefits/employee/edit/@eb.EmployeeId'>Edit</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>@eb.EmployeeName</td>
+                <td>@eb.Dependents</td>
+                <td>$@string.Format("{0:0.00}", eb.BaseEmployeeCost)</td>
+                <td>$@string.Format("{0:0.00}", eb.EmployeeDiscountAmount)</td>
+                <td>$@string.Format("{0:0.00}", eb.TotalEmployeeCost)</td>
+                <td>$@string.Format("{0:0.00}", eb.PaycheckDeduction)</td>
+                <td>
+                    <a href='/benefits/employee/edit/@eb.EmployeeId'>Edit</a>
+                </td>
+            </tr>
             }
         </tbody>
     </table>

@@ -27,6 +27,26 @@ namespace BenefitsApiGateway.Api.Controllers
         }
 
         [HttpGet]
+        [Route("GetAllEmployees")]
+        [ProducesResponseType(typeof(List<EmpDependetsBenefitDetails>), 200)]
+        [ProducesResponseType(typeof(void), 500)]
+        public async Task<IActionResult> GetAllEmployeesBenefitDetails()
+        {
+            List<EmpDependetsBenefitDetails> results;
+
+            try
+            {
+                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository, _dependentRepository, _benefitsRepository);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.InnerException);
+            }
+
+            return Ok(results);
+        }
+
+        [HttpGet]
         [Route("GetDependent")]
         [ProducesResponseType(typeof(Dependent), 200)]
         [ProducesResponseType(typeof(void), 500)]
@@ -64,26 +84,6 @@ namespace BenefitsApiGateway.Api.Controllers
             }
 
             return Ok(employeeDetails);
-        }
-
-        [HttpGet]
-        [Route("GetAllEmployees")]
-        [ProducesResponseType(typeof(List<EmpDependetsBenefitDetails>), 200)]
-        [ProducesResponseType(typeof(void), 500)]
-        public async Task<IActionResult> GetAllEmployeesBenefitDetails()
-        {
-            List<EmpDependetsBenefitDetails> results;
-
-            try
-            {
-                results = await new BenefitsOrchestration().GetEmployeeWithCurrentSalaryAsync(_employeeRepository, _dependentRepository, _benefitsRepository);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.InnerException);
-            }
-
-            return Ok(results);
         }
 
         [HttpPost]

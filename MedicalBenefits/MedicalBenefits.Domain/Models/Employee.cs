@@ -11,6 +11,7 @@ namespace MedicalBenefits.Domain.Models
         public decimal BenefitDiscount { get; set; }
         public decimal TotalBenefitsCost { get; set; }
         public decimal TotalBenefitsDiscount { get; set; }
+        public decimal PaycheckDeduction { get; set; }
         public List<Dependent> Dependents { get; set; } = new List<Dependent>();
     }
 }

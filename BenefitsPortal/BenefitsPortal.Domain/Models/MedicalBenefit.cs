@@ -15,5 +15,6 @@ namespace BenefitsPortal.Domain.Models
         public decimal EmployeeDiscountAmount { get; set; }
 
         public decimal TotalEmployeeCost { get; set; }
+        public decimal PaycheckDeduction { get; set; }
     }
 }
