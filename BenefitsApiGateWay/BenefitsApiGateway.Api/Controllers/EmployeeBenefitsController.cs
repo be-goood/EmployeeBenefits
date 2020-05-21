@@ -149,6 +149,5 @@ namespace BenefitsApiGateway.Api.Controllers
 
             return Ok();
         }
-
     }
 }
