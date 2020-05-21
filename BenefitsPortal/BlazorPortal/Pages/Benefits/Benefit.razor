@@ -49,10 +49,11 @@ else
             <tr>
                 <th>Employee Name</th>
                 <th>Dependents</th>
-                <th>Yearly Base Employee Cost</th>
-                <th>Yearly Employee Discount Amount</th>
-                <th>Yearly Total Employee Cost</th>
+                <th>Yearly Base Cost</th>
+                <th>Yearly Discount Amount</th>
+                <th>Yearly Total Cost</th>
                 <th>Paycheck deduction</th>
+                <th>Salary</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -66,6 +67,7 @@ else
                 <td>$@string.Format("{0:0.00}", eb.EmployeeDiscountAmount)</td>
                 <td>$@string.Format("{0:0.00}", eb.TotalEmployeeCost)</td>
                 <td>$@string.Format("{0:0.00}", eb.PaycheckDeduction)</td>
+                <td>$@string.Format("{0:0.00}", eb.CurrentSalary)</td>
                 <td>
                     <a href='/benefits/employee/edit/@eb.EmployeeId'>Edit</a>
                 </td>

@@ -12,6 +12,7 @@ namespace BenefitsApiGateway.Domain.Models
         public decimal TotalBenefitsCost { get; set; }
         public decimal TotalBenefitsDiscount { get; set; }
         public decimal PaycheckDeduction { get; set; }
+        public decimal CurrentSalary { get; set; }
         public List<DependetsBenefitDetails> Dependents { get; set; } = new List<DependetsBenefitDetails>();
     }
 }

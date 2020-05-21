@@ -63,6 +63,7 @@ namespace BenefitsPortal.Services
                 temp.EmployeeDiscountAmount = item.TotalBenefitsDiscount;
                 temp.TotalEmployeeCost = item.TotalBenefitsCost;
                 temp.PaycheckDeduction = item.PaycheckDeduction;
+                temp.CurrentSalary = item.CurrentSalary;
 
                 results.Add(temp);
             }

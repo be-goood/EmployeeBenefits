@@ -18,6 +18,8 @@ namespace BenefitsPortal.Domain.Models
         public decimal TotalBenefitsDiscount { get; set; }
         [DisplayFormat(DataFormatString = "{0:#.####}")]
         public decimal PaycheckDeduction { get; set; }
+        [DisplayFormat(DataFormatString = "{0:#.####}")]
+        public decimal CurrentSalary { get; set; }
         public List<DependetsBenefitDetails> Dependents { get; set; } = new List<DependetsBenefitDetails>();
     }
 }

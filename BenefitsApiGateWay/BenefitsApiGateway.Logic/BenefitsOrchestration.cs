@@ -2,6 +2,7 @@
 using BenefitsApiGateway.Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace BenefitsApiGateway.Logic
@@ -21,6 +22,25 @@ namespace BenefitsApiGateway.Logic
             var employees = await employeeRepository.GetAllEmployeesAsync();
             var inputEmployees = await GetInputEmployees(employees, dependentRepository);
             var medBenefits = await benefitsRepository.GetEmployeeMedBenefitsAsync(inputEmployees);
+            medBenefits = AppendCurrentSalary(employees, medBenefits);
+
+            return medBenefits;
+        }
+
+        private List<EmpDependetsBenefitDetails> AppendCurrentSalary(List<Employee> employees, List<EmpDependetsBenefitDetails> medBenefits)
+        {
+            foreach(var mb in medBenefits)
+            {
+                var employee = employees.FirstOrDefault(w => w.Id == mb.Id);
+                if (employee == null) continue;
+                if (employee.Salary == null) continue;
+
+
+                var currentSalary = employee.Salary
+                    .FirstOrDefault(w => w.EndDate == null || w.EndDate > DateTime.Now);
+
+                if (currentSalary != null) mb.CurrentSalary = currentSalary.YearlyWages;
+            }
 
             return medBenefits;
         }
