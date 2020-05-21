@@ -15,7 +15,7 @@ namespace Employee.Logic.Tests
         [TestMethod]
         public async Task GetAllEmployeesWithCurrentSalariesAsync_MoreThan1Salary_ReturnCurrentSalary()
         {
-            // arrange
+            // Arrange
 
             var salaries = new List<EmployeeSalary>()
             {
@@ -29,10 +29,10 @@ namespace Employee.Logic.Tests
             var mock = new Mock<IQueryNoParam<List<EmployeeEntity>>>();
             mock.Setup(p => p.ExecuteQueryAsync()).Returns(Task.FromResult(employees));
 
-            // assert
+            // Assert
             var result = await new EmployeeTransactions().GetAllEmployeesWithCurrentSalariesAsync(mock.Object);
 
-            // act
+            // Act
             Assert.IsNull(result.First().Salary.First().EndDate);
             Assert.AreEqual(52000, result.First().Salary.First().YearlyWages);
         }
