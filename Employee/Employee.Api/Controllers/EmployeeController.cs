@@ -42,7 +42,7 @@ namespace Employee.Api.Controllers
 
             try
             {
-                model = await new EmployeeTransactions().GetEmployeeWithCurrentSalaryAsync(_getEmployeeAndCurrentSalaryQuery, employeeId).ConfigureAwait(false);
+                model = await new EmployeeTransactions().GetEmployeeWithoutSalaryAsync(_getEmployeeAndCurrentSalaryQuery, employeeId).ConfigureAwait(false);
             }
             catch (Exception ex)
             {

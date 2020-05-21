@@ -73,14 +73,14 @@ namespace BenefitsPortal.Services
             var rng = new Random();
             return Task.FromResult(Enumerable.Range(1, 5).Select(index => new EmployeeBenefits
             {
-                EmployeeName = "Jorge Velazquez",
+                EmployeeName = "Jorge Smith",
                 BenefitPlan = Providers[rng.Next(Providers.Length)],
                 CoverageBeginDate = DateTime.Now,
                 DeducationBeginDate = DateTime.Now,
                 Coverage = "Family",
                 CalculatedCoverage = 1000m,
-                Dependents = "Ivy Velazquez   Daphne Velazquez",
-                Beneficiaries = "Heather Velazquez",
+                Dependents = "Ivy Smith, Daphne Smith",
+                Beneficiaries = "Heather Smith",
                 SemiMonthlyEmployeeCost = 100m,
                 SemiMonthlyEmployerContributions = 700m,
             }).ToList()); ;

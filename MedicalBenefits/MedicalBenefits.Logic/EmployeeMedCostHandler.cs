@@ -9,10 +9,10 @@ namespace MedicalBenefits.Logic
         public async Task ExecuteAsync(Parameters p)
         {
             await SetUpData(p);
-            await ApplyCostsAsync(p);
+            ApplyCostsToEachEmployee(p);
         }
 
-        public async Task SetUpData(Parameters p)
+        private async Task SetUpData(Parameters p)
         {
             foreach(var ie in p.InputEmployees)
             {
@@ -31,15 +31,7 @@ namespace MedicalBenefits.Logic
             p.CostRule = await p.GetEmployeeCostRulesQuery.ExecuteQueryAsync();
         }
 
-        public async Task ApplyCostsAsync(Parameters p)
-        {
-            await Task.Run(() =>
-            {
-                ApplyCostsToEachEmployee(p);
-            });
-        }
-
-        public void ApplyCostsToEachEmployee(Parameters p)
+        private void ApplyCostsToEachEmployee(Parameters p)
         {
             foreach (var employee in p.Employees)
             {
@@ -58,7 +50,7 @@ namespace MedicalBenefits.Logic
             }
         }
 
-        public decimal GetDiscountAmount(string name, decimal baseCost, decimal discountPercentage)
+        private decimal GetDiscountAmount(string name, decimal baseCost, decimal discountPercentage)
         {
             if (name.StartsWith('A'))
             {

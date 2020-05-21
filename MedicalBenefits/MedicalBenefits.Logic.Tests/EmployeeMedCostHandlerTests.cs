@@ -26,13 +26,13 @@ namespace MedicalBenefits.Logic.Tests
 
             var inputDependents1 = new List<InputDependent>()
             {
-                new InputDependent() { Id = Guid.Parse("D9AD13BD-4ADD-4E56-9C88-08D7E377ACA6"), Name = "Heather Velazquez" },
-                new InputDependent() { Id = Guid.Parse("79676D54-7A8B-4F3C-8A90-1D0E27F9DD71"), Name = "Daphne Velazquez" },
+                new InputDependent() { Id = Guid.Parse("D9AD13BD-4ADD-4E56-9C88-08D7E377ACA6"), Name = "Heather Smith" },
+                new InputDependent() { Id = Guid.Parse("79676D54-7A8B-4F3C-8A90-1D0E27F9DD71"), Name = "Daphne Smith" },
             };
             var inputDependents2 = new List<InputDependent>()
             {
-                new InputDependent() { Id = Guid.Parse("D9AD13BD-4ADD-4E56-9C88-08D7E377ACA6"), Name = "Heather Velazquez" },
-                new InputDependent() { Id = Guid.Parse("79676D54-7A8B-4F3C-8A90-1D0E27F9DD71"), Name = "Daphne Velazquez" },
+                new InputDependent() { Id = Guid.Parse("D9AD13BD-4ADD-4E56-9C88-08D7E377ACA6"), Name = "Alice Stonely" },
+                new InputDependent() { Id = Guid.Parse("79676D54-7A8B-4F3C-8A90-1D0E27F9DD71"), Name = "Sage Stonely" },
             };
 
             var inputEmployees = new List<InputEmployee>()

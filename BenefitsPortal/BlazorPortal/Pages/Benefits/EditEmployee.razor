@@ -2,7 +2,6 @@
 
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
-@inject IEBenefitsRepository eBenefitsRepository
 @inject IEmployeeRepository employeeRepository
 @inject NavigationManager navigation
 
@@ -39,7 +38,7 @@ else
             <div class="col-12 row">
                 <span class="col-2"></span>
                 <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateEmployee())">Update</button>
-                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteEmployee())">Delete</button>
+                @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteEmployee())">Delete</button>*@
                 <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
             </div>
 
@@ -86,17 +85,6 @@ else
         employeeToUpdate.Id = employee.Id;
         employeeToUpdate.FirstName = employee.FirstName;
         employeeToUpdate.LastName = employee.LastName;
-        //GetEmployeeWithDependentsAsync(Guid employeeId)
-        //await Task.Run(() =>
-        //{
-        //    employee = new Employee() { Id = Guid.Parse(empId), FirstName = "Jorge", LastName = "Velazquez" };
-        //    employee.Dependents = new List<Dependent>()
-        //{
-        //        new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Faith", LastName = "Velazquez" },
-        //        new Dependent () { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(empId), FirstName = "Ariel", LastName = "Velazquez" },
-        //        };
-        //});
-        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
     }
 
     private async Task UpdateEmployee()
@@ -105,12 +93,12 @@ else
         navigation.NavigateTo("/benefits/Benefit");
     }
 
-    private async Task DeleteEmployee()
-    {
-        await Task.Run(() =>
-        {
-        });
-    }
+    //private async Task DeleteEmployee()
+    //{
+    //    await Task.Run(() =>
+    //    {
+    //    });
+    //}
 
     private async Task Cancel()
     {

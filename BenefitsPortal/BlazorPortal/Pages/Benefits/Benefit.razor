@@ -13,8 +13,6 @@
     <hr />
 
     <EditForm Model="@employee">
-        @*<DataAnnotationsValidator />*@
-
         <div class="col-12 row">
             <label class="col-2 font-weight-bold">First name :</label>
             <input @ref="publisherNameTextBox" class="form-control col-3" @bind="employee.FirstName" placeholder="First name" />
@@ -79,7 +77,6 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
         eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsAsync();
     }
 

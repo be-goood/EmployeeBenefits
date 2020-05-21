@@ -2,7 +2,6 @@
 
 @using BenefitsPortal.Domain.Models
 @using BenefitsPortal.Domain.Interfaces
-@inject IEBenefitsRepository eBenefitsRepository
 @inject IDependentRepository dependentRepository
 @inject NavigationManager navigation
 
@@ -18,7 +17,6 @@ else
     <div class="col-12">
         <hr />
         <EditForm Model="@dependent">
-            @*<DataAnnotationsValidator />*@
 
             <div class="col-12 row">
                 <label class="col-2 font-weight-bold">First name :</label>
@@ -35,7 +33,7 @@ else
             <div class="col-12 row">
                 <span class="col-2"></span>
                 <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateDependent())">Update</button>
-                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteDependent())">Delete</button>
+                @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteDependent())">Delete</button>*@
                 <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
             </div>
 
@@ -55,11 +53,6 @@ else
 
         protected override async Task OnInitializedAsync()
         {
-            //await Task.Run(() =>
-            //{
-            //    dependent = new Dependent() { Id = Guid.NewGuid(), EmployeeId = Guid.Parse(dependentId), FirstName = "Faith", LastName = "Velazquez" };
-            //});
-            //eMedBenefits = await eBenefitsRepository.GetEmployeeMedBenefitsTestAsync();
             dependent = await dependentRepository.GetDependentAsync(Guid.Parse(dependentId));
         }
 

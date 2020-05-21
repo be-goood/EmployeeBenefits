@@ -10,7 +10,7 @@ namespace Employee.Logic
 {
     public class EmployeeTransactions
     {
-        public async Task<EmployNoSalaryModel> GetEmployeeWithCurrentSalaryAsync(IQuery<EmployeeEntity, Guid> getEmployeeAndSalaryQuery, Guid employeeId)
+        public async Task<EmployNoSalaryModel> GetEmployeeWithoutSalaryAsync(IQuery<EmployeeEntity, Guid> getEmployeeAndSalaryQuery, Guid employeeId)
         {
             var employee = await getEmployeeAndSalaryQuery.ExecuteQueryAsync(employeeId);
             var employeeNoSalaryModel = new EmployNoSalaryModel()
