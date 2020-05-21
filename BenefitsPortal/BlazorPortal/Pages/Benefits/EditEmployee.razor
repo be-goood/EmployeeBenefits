@@ -20,8 +20,9 @@ else
             <a href="/benefits/dependent/add/@empId">New Dependent</a>
         </p>
 
-        <EditForm Model="@employee" OnValidSubmit="@UpdateEmployee">
-            @*<DataAnnotationsValidator />*@
+        <EditForm Model="@employeeToUpdate" OnValidSubmit="@UpdateEmployee">
+            @*<ValidationSummary />*@
+            <DataAnnotationsValidator />
 
             <div class="col-12 row">
                 <label class="col-2 font-weight-bold">First name :</label>
@@ -37,7 +38,8 @@ else
             <br />
             <div class="col-12 row">
                 <span class="col-2"></span>
-                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateEmployee())">Update</button>
+                <button type="submit" class="form-control col-1 btn btn-primary">Update</button>
+                @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateEmployee())">Update</button>*@
                 @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteEmployee())">Delete</button>*@
                 <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
             </div>

@@ -16,7 +16,9 @@ else
 {
     <div class="col-12">
         <hr />
-        <EditForm Model="@dependent">
+        <EditForm Model="@dependent" OnValidSubmit="@UpdateDependent">
+            @*<ValidationSummary />*@
+            <DataAnnotationsValidator />
 
             <div class="col-12 row">
                 <label class="col-2 font-weight-bold">First name :</label>
@@ -32,7 +34,8 @@ else
             <br />
             <div class="col-12 row">
                 <span class="col-2"></span>
-                <button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateDependent())">Update</button>
+                <button type="submit" class="form-control col-1 btn btn-primary">Update</button>
+                @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await UpdateDependent())">Update</button>*@
                 @*<button type="submit" class="form-control col-1 btn btn-primary" @onclick="@(async () => await DeleteDependent())">Delete</button>*@
                 <button type="submit" class="form-control col-1 btn btn-light" @onclick="@(async () => await Cancel())">Cancel</button>
             </div>
